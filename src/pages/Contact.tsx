@@ -1,9 +1,8 @@
-// src/components/Contact.tsx
+// src/pages/Contact.tsx
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Mail, Linkedin, Github, Calendar, ArrowLeft } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { Link } from "react-router-dom";
 
 const Contact = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -40,34 +39,6 @@ const Contact = () => {
                       <p className="text-muted-foreground text-xs sm:text-sm">wgreaney0405@gmail.com</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-soft hover:shadow-medium transition-all duration-300 hover-lift">
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="w-10 sm:w-12 h-10 sm:h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                      <Linkedin className="w-5 sm:w-6 h-5 sm:h-6 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-sm sm:text-base">LinkedIn</h3>
-                      <p className="text-muted-foreground text-xs sm:text-sm">Connect professionally</p>
-                    </div>
-                  </div>       
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-soft hover:shadow-medium transition-all duration-300 hover-lift">
-                <CardContent className="p-4 sm:p-6">
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="w-10 sm:w-12 h-10 sm:h-12 bg-accent/10 rounded-full flex items-center justify-center">
-                      <Github className="w-5 sm:w-6 h-5 sm:h-6 text-accent" />
-                    </div>
-                    <div>
-                      <h3 className="font-semibold text-sm sm:text-base">GitHub</h3>
-                      <p className="text-muted-foreground text-xs sm:text-sm">View my projects</p>
-                    </div>
-                  </div>       
                 </CardContent>
               </Card>
               
