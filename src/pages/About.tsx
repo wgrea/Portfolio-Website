@@ -12,7 +12,7 @@ const About = () => {
   ];
 
   const tools = [
-    "bolt.new", "lovable.dev", "ChatGPT", "DeepSeek", "Figma"
+    "bolt.new", "lovable.dev", "Claude", "Copilot", "ChatGPT", "DeepSeek", "Figma"
   ];
   
   return (
@@ -28,7 +28,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
-            Recent Computer Science graduate exploring the intersection of AI-powered development and modern web technologies.
+            Recent Computer Science graduate building web applications with React and TypeScript.
           </p>
         </div>
 
@@ -67,10 +67,35 @@ const About = () => {
               </p>
               
               <p className="text-sm sm:text-base">
-                Currently, I'm focused on building my professional portfolio, practicing algorithmic 
-                problem-solving, and exploring entrepreneurial opportunities in the digital nomad space. 
-                I believe in learning through building and sharing knowledge with the developer community.
+                Currently, I'm building a portfolio of affiliate e-commerce sites to test conversion 
+                strategies across different niches, while finalizing SkillsHub—an MVP for discovering 
+                trending skills and project ideas. I also practice data structures and algorithms daily, 
+                and I enhance many of my past academic projects by modernizing their tech stacks and 
+                adding production features. I learn best by building complete projects and iterating on them over time.
               </p>
+            </div>
+
+            {/* Internship Experience */}
+            <div className="space-y-6 mt-6 text-muted-foreground leading-relaxed">
+              <h3 className="text-xl sm:text-2xl font-semibold text-foreground">Recent Experience</h3>
+
+              <div className="space-y-4">
+                <div>
+                  <h4 className="text-lg font-medium text-card-foreground">AI Agent Engineer Intern · BCAMP</h4>
+                  <p className="text-sm sm:text-base">
+                    Apr 2025 · Remote · San Francisco, CA<br />
+                    Developed AI agent prototypes using Python and data engineering principles. Explored Sophon Chain and Cod3x AI Agent to enhance agent capabilities. Collaborated on real-world challenges and incorporated feedback into iterative improvements.
+                  </p>
+                </div>
+
+                <div>
+                  <h4 className="text-lg font-medium text-card-foreground">Founder · Startery</h4>
+                  <p className="text-sm sm:text-base">
+                    May–Jun 2025 · Remote<br />
+                    Built a premium-first MVP using agile development and AI-driven tools. Conducted user research and engaged with industry experts to validate market demand. Focused on rapid iteration and product-market fit.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Skills */}
@@ -102,32 +127,33 @@ const About = () => {
 
             {/* Current Focus */}
             <div className="mt-8 p-4 sm:p-6 bg-surface rounded-xl border border-border/50">
-              <h4 className="text-lg font-semibold mb-3 text-foreground">Currently Focused On</h4>
+              <h4 className="text-lg font-semibold mb-3 text-foreground">Currently Working On</h4>
               <ul className="space-y-2 text-sm sm:text-base text-muted-foreground">
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                  Building React projects with AI-assisted development workflows
+                  Building multiple affiliate e-commerce sites to test conversion optimization across different product niches
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                  Practicing data structures & algorithms with pattern recognition
+                  Launching SkillsHub MVP—a platform for discovering trending skills and project opportunities
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                  Creating technical content and building professional networks
+                  Daily practice with data structures and algorithms
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0" />
-                  Exploring entrepreneurial opportunities in digital nomad services
+                  Enhancing academic projects with modern frameworks and deployment pipelines
                 </li>
               </ul>
             </div>
-{/*
+
+            {/*
             <Button variant="cta" size="lg" className="group w-full sm:w-auto">
               <Download className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
               Download Resume
             </Button>
-             */}
+            */}
           </div>
         </div>
       </div>

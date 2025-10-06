@@ -1,6 +1,6 @@
 // src/components/Hero.tsx
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom"; // ← Add this import
+import { Link } from "react-router-dom";
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
@@ -31,51 +31,52 @@ const Hero = () => {
             Frontend Developer & AI-Powered Builder
           </p>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
-            Recent CS graduate specializing in React and TypeScript. I build modern web applications 
-            using AI-assisted development and focus on creating great user experiences.
+            Recent CS graduate building web applications with React and TypeScript. I create functional products from concept to deployment—affiliate storefronts, MVPs, and enhanced school projects that solve real problems.
           </p>
         </div>
 
-        {/* Achievement/Status Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 bg-surface/80 border border-border/50 rounded-full text-sm text-muted-foreground mb-6 sm:mb-8">
-          <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-          Available for opportunities
+        {/* Status Badges */}
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-8">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-surface/80 border border-border/50 rounded-full text-sm text-muted-foreground">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+            Available for opportunities
+          </div>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-surface/80 border border-border/50 rounded-full text-sm text-muted-foreground">
+            <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
+            Self-Directed Builder
+          </div>
         </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8 sm:mb-12 px-2">
           <Link to="/about">
-          <Button 
-            variant="elegant" 
-            size="lg" 
-            onClick={scrollToContact}
-            className="w-full sm:w-auto"
-          >
+            <Button 
+              variant="elegant" 
+              size="lg" 
+              className="w-full sm:w-auto"
+            >
               About Me
             </Button>
           </Link>
           <Link to="/projects">
-          <Button 
-            variant="hero" 
-            size="lg" 
-            onClick={scrollToProjects}
-            className="group w-full sm:w-auto"
-          >
-            View My Projects
-            <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
-          </Button>
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="group w-full sm:w-auto"
+            >
+              View My Projects
+              <ArrowDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+            </Button>
           </Link>
-
           <Link to="/contact">
-          <Button 
-            variant="elegant" 
-            size="lg" 
-            onClick={scrollToContact}
-            className="w-full sm:w-auto"
-          >
-            Let's Connect
-            <Mail className="w-4 h-4" />
-          </Button>
+            <Button 
+              variant="elegant" 
+              size="lg" 
+              className="w-full sm:w-auto"
+            >
+              Let's Connect
+              <Mail className="w-4 h-4" />
+            </Button>
           </Link>
         </div>
 
@@ -88,7 +89,13 @@ const Hero = () => {
             AI-Assisted Development
           </span>
           <span className="px-3 py-1 bg-surface text-surface-foreground rounded-full text-sm border border-border/50">
-            Problem Solving
+            Modular Planning
+          </span>
+          <span className="px-3 py-1 bg-green-500/10 text-green-600 rounded-full text-sm border border-green-500/20">
+            Emotional UX Design
+          </span>
+          <span className="px-3 py-1 bg-blue-500/10 text-blue-600 rounded-full text-sm border border-blue-500/20">
+            Independent MVP Development
           </span>
         </div>
       </div>

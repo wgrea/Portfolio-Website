@@ -23,6 +23,7 @@ const Navigation = () => {
     { label: 'Home', href: '/' },
     { label: 'About', href: '/about' },
     { label: 'Projects', href: '/projects' },
+    // { label: 'Affiliate Projects', href: '/affiliate-projects' }, // I removed this line because I want this page to be only accessible through the Projects section
     { label: 'Contact', href: '/contact' },
   ];
 
@@ -66,11 +67,12 @@ const Navigation = () => {
                   }`} />
                 </Link>
               ))}
-              <Link to="/contact">
+              {/* 
+              <Link to="/contact"> 
                 <Button variant="elegant" size="sm">
                   Hire Me
-                </Button>
-              </Link>
+                </Button> 
+              </Link> */}
             </div>
 
             {/* Mobile Menu Button */}

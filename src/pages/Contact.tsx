@@ -63,7 +63,7 @@ const Contact = () => {
                   <ul className="space-y-2 text-xs sm:text-sm text-muted-foreground">
                     <li className="flex items-start gap-2">
                       <span className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0" />
-                      Frontend developer positions
+                      Frontend/Full-stack developer roles
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0" />
@@ -71,11 +71,11 @@ const Contact = () => {
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0" />
-                      Digital nomad collaborations
+                      Web-based product collaborations
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0" />
-                      Tech networking & mentorship
+                      Tech community connections
                     </li>
                   </ul>
                 </CardContent>
