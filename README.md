@@ -1,5 +1,16 @@
 # Welcome to your Lovable project
 
+# Install dependencies (run this first if you just cloned/downloaded)
+npm install
+npm run build
+npm run dev
+
+# Preview production build locally (test before deploying)
+npm run preview
+
+# Lint your code (check for errors)
+npm run lint
+
 ## Project info
 
 **URL**: https://lovable.dev/projects/fa45ca27-a649-4442-93bc-bb8b773d05d2
