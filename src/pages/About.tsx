@@ -28,7 +28,7 @@ const About = () => {
             About Me
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
-            Recent Computer Science graduate building web applications with React and TypeScript.
+            Systems-oriented developer building emotionally attuned web applications with React and TypeScript.
           </p>
         </div>
 
@@ -53,17 +53,26 @@ const About = () => {
           <div className={`space-y-6 animate-on-scroll stagger-2 ${isVisible ? 'visible' : ''}`}>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p className="text-sm sm:text-base">
-                I'm a recent Computer Science graduate who discovered my passion for frontend development 
-                through hands-on experience. My journey began in spring 2022 with no coding background, 
-                and I've since developed a strong preference for creating user-facing applications that 
-                combine functionality with great user experiences.
+                My transition into software development was driven by a deep interest in human-centered engineering and 
+                emotionally intelligent systems. I’ve since architected affiliate-first storefronts, async-ready platforms, 
+                and scalable UX frameworks using React, TypeScript, and Python.
               </p>
-              
+
               <p className="text-sm sm:text-base">
                 I specialize in React and TypeScript, using AI-powered development tools to build 
                 efficient, modern web applications. From building Django backends for capstone projects 
                 to creating mobile-friendly web apps, I enjoy the practical challenges of bringing 
                 ideas to life through code.
+              </p>
+
+              <p className="text-sm sm:text-base">
+                I specialize in frontend development with a focus on emotionally resonant user experiences and modular design. 
+                My work centers on building user-facing applications that balance functionality, clarity, and async-friendly UX.
+              </p>
+
+              <p className="text-sm sm:text-base">
+                My frontend work focuses on emotionally resonant user experiences and modular design. 
+                I build user-facing applications that balance functionality, clarity, and async-friendly UX.
               </p>
               
               <p className="text-sm sm:text-base">

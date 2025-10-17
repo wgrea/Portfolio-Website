@@ -31,7 +31,7 @@ const Hero = () => {
             Frontend Developer & AI-Powered Builder
           </p>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
-            Recent CS graduate building web applications with React and TypeScript. I create functional products from concept to deployment—affiliate storefronts, MVPs, and enhanced school projects that solve real problems.
+            Systems-oriented developer building emotionally intelligent web applications with React and TypeScript. I create functional products from concept to deployment—affiliate storefronts, async-ready MVPs, and modular UX platforms that solve real problems.
           </p>
         </div>
 
