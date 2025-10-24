@@ -216,9 +216,12 @@ const ProjectCard = ({
         <div className={`flex space-x-2 mt-auto ${compact ? '' : 'sm:space-x-3'}`}>
           {liveUrl && (
             <Button 
-              variant={compact ? "outline" : "hero"}
-              size={compact ? "sm" : "sm"}
-              className={compact ? 'flex-1 text-xs h-7' : 'flex-1'}
+              variant="default"
+              size="sm"
+              className={compact 
+                ? 'flex-1 text-xs h-7 bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 text-white' 
+                : 'flex-1 bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 text-white shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40'
+              }
               onClick={handleLiveClick}
             >
               <ExternalLink className={compact ? 'w-3 h-3 mr-1' : 'w-4 h-4'} />

@@ -95,7 +95,7 @@ const ProjectDetail = () => {
             )}
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 bg-clip-text text-transparent">
             {project.title}
           </h1>
           
@@ -111,7 +111,7 @@ const ProjectDetail = () => {
                 size="lg"
                 asChild
               >
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-teal-400 transition-colors">
                   <ExternalLink className="w-4 h-4 mr-2" />
                   Live Demo
                 </a>

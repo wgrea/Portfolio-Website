@@ -22,7 +22,7 @@ const Projects = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className={`text-center mb-12 sm:mb-16 animate-on-scroll ${isVisible ? 'visible' : ''}`}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 bg-clip-text text-transparent">
             My Projects
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-3xl mx-auto px-2">
@@ -86,7 +86,7 @@ const Projects = () => {
                 </p>
                 <div className="text-center">
                   <Link to="/affiliate-projects">
-                    <Button variant="hero" size="lg" className="group">
+                    <Button variant="hero" size="lg" className="group bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 text-white shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40">
                       Explore the Lab
                       <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                     </Button>

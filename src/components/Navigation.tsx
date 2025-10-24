@@ -102,11 +102,6 @@ const Navigation = () => {
                     {item.label}
                   </Link>
                 ))}
-                <Link to="/contact" onClick={() => setIsMenuOpen(false)}>
-                  <Button variant="elegant" size="sm" className="w-full mt-4">
-                    Hire Me
-                  </Button>
-                </Link>
               </div>
             </div>
           )}

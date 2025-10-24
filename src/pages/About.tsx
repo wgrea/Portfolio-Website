@@ -24,7 +24,7 @@ const About = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className={`text-center mb-12 sm:mb-16 animate-on-scroll ${isVisible ? 'visible' : ''}`}>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 bg-clip-text text-transparent">
             About Me
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
@@ -126,7 +126,7 @@ const About = () => {
                 {tools.map((tool, index) => (
                   <span 
                     key={index}
-                    className="px-3 sm:px-4 py-1 sm:py-2 bg-accent/10 text-accent-foreground rounded-full border border-accent/20 hover:border-accent/50 hover:bg-accent/20 transition-all duration-300 hover-lift text-xs sm:text-sm"
+                    className="px-3 sm:px-4 py-1 sm:py-2 bg-gradient-to-r from-blue-500/10 to-teal-400/10 text-blue-600 dark:text-blue-400 rounded-full border border-blue-500/20 hover:border-blue-500/50 hover:bg-blue-500/20 transition-all duration-300 hover-lift text-xs sm:text-sm"
                   >
                     {tool}
                   </span>
