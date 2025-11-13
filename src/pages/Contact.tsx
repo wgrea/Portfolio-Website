@@ -93,6 +93,7 @@ const Contact = () => {
                       </a>
                     </Button>
                   </div>
+                  {/* GitHub Activity Link 
                   <div className="flex items-center justify-between">
                     <span className="text-xs sm:text-sm text-muted-foreground">GitHub Activity:</span>
                     <Button variant="ghost" size="sm" asChild className="h-8">
@@ -101,7 +102,7 @@ const Contact = () => {
                         View Activity
                       </a>
                     </Button>
-                  </div>
+                  </div> */}
                   <div className="flex items-center justify-between">
                     <span className="text-xs sm:text-sm text-muted-foreground">Reddit:</span>
                     <Button variant="ghost" size="sm" asChild className="h-8">
@@ -200,13 +201,7 @@ const Contact = () => {
                   </Button>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 mt-4 border-t border-border/50">
-                  <Button variant="ghost" size="sm" asChild>
-                    <a href="https://github.com/issues/recent" target="_blank" rel="noopener noreferrer">
-                      <ActivityIcon className="w-4 h-4 mr-2" />
-                      Activity
-                    </a>
-                  </Button>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-4 mt-4 border-t border-border/50">
                   <Button variant="ghost" size="sm" asChild>
                     <a href="https://www.reddit.com/user/Which-Olive847/" target="_blank" rel="noopener noreferrer">
                       <RedditIcon className="w-4 h-4 mr-2" />
