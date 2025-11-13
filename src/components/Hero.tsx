@@ -95,54 +95,6 @@ const Hero = () => {
           </Link>
         </div>
 
-        {/* Social Links - UPDATED: Only public links */}
-        <div className="flex flex-wrap justify-center gap-3 mb-6 sm:mb-8 px-2">
-          <Button 
-            variant="outline" 
-            size="sm" 
-            asChild
-            className="gap-2"
-          >
-            <a href="https://www.linkedin.com/in/william-greaney-57a7a2276/" target="_blank" rel="noopener noreferrer">
-             <Linkedin className="w-4 h-4 mr-2" />
-             LinkedIn
-            </a>
-          </Button>
-          <Button 
-            variant="outline" 
-            size="sm" 
-            asChild
-            className="gap-2"
-          >
-            <a href="https://github.com/wgrea" target="_blank" rel="noopener noreferrer">
-              <Github className="w-4 h-4" />
-              GitHub
-            </a>
-          </Button>
-          <Button 
-            variant="outline" 
-            size="sm" 
-            asChild
-            className="gap-2"
-          >
-            <a href="https://github.com/issues/recent" target="_blank" rel="noopener noreferrer">
-              <ActivityIcon className="w-4 h-4" />
-              GitHub Activity
-            </a>
-          </Button>
-          <Button 
-            variant="outline" 
-            size="sm" 
-            asChild
-            className="gap-2"
-          >
-            <a href="https://reddit.com/user/wgrea" target="_blank" rel="noopener noreferrer">
-              <RedditIcon className="w-4 h-4" />
-              Reddit
-            </a>
-          </Button>
-        </div>
-
         {/* Key Skills/Focus Areas */}
         <div className="flex flex-wrap justify-center gap-3 mb-8 sm:mb-12 px-2">
           <span className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm border border-primary/20">
