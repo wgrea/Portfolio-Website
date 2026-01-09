@@ -9,9 +9,11 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
 import ProjectDetail from "./pages/ProjectDetail"; // ADD THIS IMPORT
-import AffiliateProjects from "./pages/AffiliateProjects"; // ADD THIS IMPORT
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import PlatformProjects from "./pages/PlatformProjects";
+import TravelProjects from "./pages/TravelProjects";
+import AcademicProjects from "./pages/AcademicProjects";
 
 const queryClient = new QueryClient();
 
@@ -28,7 +30,9 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:id" element={<ProjectDetail />} /> {/* ADD THIS ROUTE */}
-          <Route path="/affiliate-projects" element={<AffiliateProjects />} /> {/* ADD THIS ROUTE */}
+          <Route path="/projects/academic" element={<AcademicProjects />} />
+          <Route path="/projects/travel" element={<TravelProjects />} />
+          <Route path="/projects/platforms" element={<PlatformProjects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

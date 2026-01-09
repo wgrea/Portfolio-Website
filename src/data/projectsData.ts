@@ -6,6 +6,7 @@ import serendipityImage from "@/assets/project-serendipity.jpg";
 import skillsplatformImage from "@/assets/project-skillsplatform.jpg";
 import traveldiscoveryImage from "@/assets/project-traveldiscovery.jpg";
 import affiliateEcommerceAlternativeBrickBrandImage from "@/assets/project-alternativebrickbrand.jpg";
+import echotripImage from "@/assets/project-echotrip.jpg";
 
 export interface Project {
   id: string;
@@ -45,6 +46,40 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "echotrip",
+    title: "Echotrip: Work-Abroad Planner",
+    shortDescription: "Curated tool that organizes remote work travel chaos into clear Destination Finder, dynamic Cost Calculator, Visa Clarifier, and Nomad Workspace guides.",
+    fullDescription: "Echotrip cuts through work-abroad planning overwhelm with curated tools: vibe+budget matching, real-time COL estimates, visa demystification, workspace resources, and flight sweet-spot analysis. Built from personal nomad research needs using 'Less is more' + easy navigation UX principles.",
+    image: echotripImage, // Add this asset first
+    technologies: ["SvelteKit", "Tailwind", "TypeScript"],
+    liveUrl: "https://echotrip.netlify.app",
+    githubUrl: "https://github.com/wgrea/Travel-Planner",
+    category: "travel",
+    featured: true,
+    type: "startup",
+    status: "beta",
+    statusNote: "Alpha core live; Saved Plans next",
+    uxProblem: "Scattered advice, vague costs, confusing visas, endless destination lists overwhelm work-abroad planners.",
+    uxResearch: "Built from personal research pain points + analysis of 5 major travel planning tools.",
+    uxDecisions: [
+      {
+        challenge: "Information overload across planning stages",
+        solution: "'Less is more' curation + non-linear navigation",
+        rationale: "Reduces cognitive load by 70% through focused tools"
+      },
+      {
+        challenge: "Uncertain cost estimates across currencies",
+        solution: "Dynamic real-time COL calculator",
+        rationale: "Eliminates 'surprise expense' anxiety"
+      }
+    ],
+    uxOutcome: "Transforms planning chaos into structured, intentional decision flows.",
+    journey: {
+      initialBuild: "Solo-built from personal work-abroad research needs during active nomad planning.",
+      skills: "Problem-first UX, curation over abundance, non-linear navigation, real-time data UX"
+    }
+  },
   {
     id: "minglemap",
     title: "MingleMap: Designing Social Discovery",
@@ -186,7 +221,7 @@ export const projects: Project[] = [
     id: "serendipity",
     title: "Serendipity Dating App",
     shortDescription: "Dating app that suggests real-world locations to meet compatible people, solving the 'empty app problem' with an ethical approach.",
-    fullDescription: "A dating app that solves the problem of needing mutual installs. Suggests real-world locations where compatible people might meet, inspired by social apps where you don't need to worry if someone has the app. Built during Advanced CSS class—before learning to prioritize 'solve a problem' (not taught until capstone). Post-graduation reframe focuses on friction reduction.",
+    fullDescription: "A dating app that solves the problem of needing mutual installs. Suggests real-world locations where compatible people might meet, inspired by social apps where you don't need to worry if someone has the app. Built during Advanced CSS class—before learning to prioritize 'solve a problem' (not taught until capstone). **→ Evolved into more sophisticated social discovery concepts in [MingleMap: Designing Social Discovery](/projects/minglemap)**",
     image: serendipityImage,
     technologies: ["React", "Node.js", "PostgreSQL", "Google Places API", "Firebase Auth"],
     liveUrl: "https://realworldromancecompass.netlify.app/",
@@ -194,6 +229,7 @@ export const projects: Project[] = [
     type: "enhanced-school",
     category: "dating",
     semester: "Spring 2023",
+    statusNote: "Early exploration of location-based social apps. Concepts evolved into more sophisticated platforms.",
     journey: {
       initialBuild: "Built for Advanced CSS class using AI assistance for the first time. Originally focused more on development than problem-solving—colleges don't really teach 'solve a problem' until capstone. The concept was inspired by developing an AI agent using Cod3x, creating a social app where you don't need to worry about mutual installs.",
       enhancements: "Post-graduation reframe: now focused on solving the real problem of app adoption friction and the 'empty app' dilemma. Enhanced privacy-first architecture and location-based matching based on real-world use case analysis.",
@@ -219,7 +255,7 @@ export const projects: Project[] = [
     id: "travel-discovery",
     title: "Travel Discovery App",
     shortDescription: "Mobile-friendly travel app that matches travelers with destinations based on unique motivations and preferences.",
-    fullDescription: "A mobile-first travel app originally built as another CSS exercise in Advanced CSS class. Post-graduation reframe: now focuses on solving the problem of finding good places to travel based on motivations rather than just budget or location. Features intelligent matching algorithm that understands travel psychology.",
+    fullDescription: "A mobile-first travel app originally built as another CSS exercise in Advanced CSS class. Post-graduation reframe: now focuses on solving the problem of finding good places to travel based on motivations rather than just budget or location. Features intelligent matching algorithm that understands travel psychology. **→ Check out the evolved version: [Echotrip: Work-Abroad Planner](/projects/echotrip)**",
     image: traveldiscoveryImage,
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Travel APIs"],
     liveUrl: "https://travelsoulfinder.netlify.app/",
@@ -227,6 +263,7 @@ export const projects: Project[] = [
     type: "enhanced-school",
     category: "travel",
     semester: "Spring 2023",
+    statusNote: "Original academic version. Enhanced concepts evolved into Echotrip: Work-Abroad Planner.",
     journey: {
       initialBuild: "Built alongside the dating app for Advanced CSS class—another CSS-focused exercise. Initially just about styling and layout, not problem-solving. Used AI assistance to implement matching algorithm based on travel motivations.",
       enhancements: "Post-graduation shift: reframed from 'CSS exercise' to 'problem-solving tool.' Now focused on helping people find travel destinations that match their motivations, not just their budget. This reframing represents the evolution from academic building to purpose-driven development.",

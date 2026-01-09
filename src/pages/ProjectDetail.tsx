@@ -1,21 +1,40 @@
 // src/pages/ProjectDetail.tsx
 import { useParams, Link } from "react-router-dom";
-import { getProjectById } from "@/data/projectsData";
+import { getProjectById, projects } from "@/data/projectsData";
+import type { Project } from "@/data/projectsData";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { 
-  ArrowLeft, 
-  ExternalLink, 
-  Github, 
-  School,
-  BookOpen,
-  TrendingUp,
-  CheckCircle,
-  Star,
-  Clock,
-  Zap
-} from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowLeft, TrendingUp } from "lucide-react";
+
+// Import the new components
+import ProjectHeader from "@/components/project-detail/ProjectHeader";
+import ProjectJourney from "@/components/project-detail/ProjectJourney";
+import ProjectUX from "@/components/project-detail/ProjectUX";
+import ProjectFuturePlans from "@/components/project-detail/ProjectFuturePlans";
+import ProjectSidebar from "@/components/project-detail/ProjectSidebar";
+
+// Helper functions
+const getStatusIcon = (status?: string) => {
+  switch (status) {
+    case 'live': return <TrendingUp className="w-4 h-4" />;
+    case 'development': return <TrendingUp className="w-4 h-4" />;
+    case 'beta': return <TrendingUp className="w-4 h-4" />;
+    case 'complete': return <TrendingUp className="w-4 h-4" />;
+    case 'paused': return <TrendingUp className="w-4 h-4" />;
+    default: return null;
+  }
+};
+
+const getStatusColor = (status?: string) => {
+  switch (status) {
+    case 'live': return 'bg-green-100 text-green-700 border-green-200';
+    case 'development': return 'bg-yellow-100 text-yellow-700 border-yellow-200';
+    case 'beta': return 'bg-blue-100 text-blue-700 border-blue-200';
+    case 'complete': return 'bg-green-100 text-green-700 border-green-200';
+    case 'paused': return 'bg-yellow-100 text-yellow-700 border-yellow-200';
+    default: return 'bg-gray-100 text-gray-700 border-gray-200';
+  }
+};
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
@@ -34,28 +53,6 @@ const ProjectDetail = () => {
     );
   }
 
-  const getStatusIcon = (status?: string) => {
-    switch (status) {
-      case 'live': return <CheckCircle className="w-4 h-4" />;
-      case 'development': return <TrendingUp className="w-4 h-4" />;
-      case 'beta': return <Zap className="w-4 h-4" />;
-      case 'complete': return <CheckCircle className="w-4 h-4" />;
-      case 'paused': return <Clock className="w-4 h-4" />;
-      default: return null;
-    }
-  };
-
-  const getStatusColor = (status?: string) => {
-    switch (status) {
-      case 'live': return 'bg-green-100 text-green-700 border-green-200';
-      case 'development': return 'bg-yellow-100 text-yellow-700 border-yellow-200';
-      case 'beta': return 'bg-blue-100 text-blue-700 border-blue-200';
-      case 'complete': return 'bg-green-100 text-green-700 border-green-200';
-      case 'paused': return 'bg-yellow-100 text-yellow-700 border-yellow-200';
-      default: return 'bg-gray-100 text-gray-700 border-gray-200';
-    }
-  };
-
   return (
     <div className="min-h-screen bg-background py-16 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
@@ -68,69 +65,11 @@ const ProjectDetail = () => {
         </Link>
 
         {/* Project Header */}
-        <div className="mb-12">
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.featured && (
-              <Badge className="bg-primary text-primary-foreground">
-                <Star className="w-3 h-3 mr-1" />
-                Featured
-              </Badge>
-            )}
-            {project.type === 'enhanced-school' && (
-              <Badge className="bg-blue-100 text-blue-700 border-blue-200">
-                <School className="w-3 h-3 mr-1" />
-                Enhanced School Project
-              </Badge>
-            )}
-            {project.status && (
-              <Badge className={getStatusColor(project.status)}>
-                {getStatusIcon(project.status)}
-                <span className="ml-1 capitalize">{project.status}</span>
-              </Badge>
-            )}
-            {project.semester && (
-              <Badge variant="outline">
-                Originally from {project.semester}
-              </Badge>
-            )}
-          </div>
-
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 bg-clip-text text-transparent">
-            {project.title}
-          </h1>
-          
-          <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-            {project.fullDescription}
-          </p>
-
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-3">
-            {project.liveUrl && (
-              <Button 
-                variant="hero" 
-                size="lg"
-                asChild
-              >
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:text-teal-400 transition-colors">
-                  <ExternalLink className="w-4 h-4 mr-2" />
-                  Live Demo
-                </a>
-              </Button>
-            )}
-            {project.githubUrl && (
-              <Button 
-                variant="outline" 
-                size="lg"
-                asChild
-              >
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                  <Github className="w-4 h-4 mr-2" />
-                  View Code
-                </a>
-              </Button>
-            )}
-          </div>
-        </div>
+        <ProjectHeader 
+          project={project}
+          getStatusColor={getStatusColor}
+          getStatusIcon={getStatusIcon}
+        />
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Content */}
@@ -147,139 +86,13 @@ const ProjectDetail = () => {
             </Card>
 
             {/* Journey Section */}
-            {project.journey && (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2">
-                    <BookOpen className="w-5 h-5" />
-                    Project Journey
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  {project.journey.initialBuild && (
-                    <div>
-                      <h4 className="font-semibold mb-2 text-primary">Initial Build</h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.journey.initialBuild}
-                      </p>
-                    </div>
-                  )}
-                  {project.journey.enhancements && (
-                    <div>
-                      <h4 className="font-semibold mb-2 text-primary">Enhancements</h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.journey.enhancements}
-                      </p>
-                    </div>
-                  )}
-                  {project.journey.challenges && (
-                    <div>
-                      <h4 className="font-semibold mb-2 text-primary">Key Challenges</h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.journey.challenges}
-                      </p>
-                    </div>
-                  )}
-                  {project.journey.decisions && (
-                    <div>
-                      <h4 className="font-semibold mb-2 text-primary">Technical Decisions</h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.journey.decisions}
-                      </p>
-                    </div>
-                  )}
-                  {project.journey.skills && (
-                    <div>
-                      <h4 className="font-semibold mb-2 text-primary">Skills Developed</h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {project.journey.skills}
-                      </p>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            )}
+            <ProjectJourney journey={project.journey} />
 
-{(project.uxProblem || project.uxDecisions) && (
-  <Card>
-    <CardHeader>
-      <CardTitle className="flex items-center gap-2">
-        <div className="w-6 h-6 rounded-full bg-gradient-to-r from-blue-500 to-teal-400 flex items-center justify-center">
-          <span className="text-white text-xs font-bold">UX</span>
-        </div>
-        User Experience Design
-      </CardTitle>
-    </CardHeader>
-    <CardContent className="space-y-6">
-      {/* Problem Statement */}
-      {project.uxProblem && (
-        <div>
-          <h4 className="font-semibold mb-2 text-primary">The User Problem</h4>
-          <p className="text-muted-foreground leading-relaxed">
-            {project.uxProblem}
-          </p>
-        </div>
-      )}
-      
-      {/* Research (if exists) */}
-      {project.uxResearch && (
-        <div>
-          <h4 className="font-semibold mb-2 text-primary">Research Insights</h4>
-          <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-            {project.uxResearch}
-          </p>
-        </div>
-      )}
-      
-      {/* UX Decisions Grid */}
-      {project.uxDecisions && project.uxDecisions.length > 0 && (
-        <div>
-          <h4 className="font-semibold mb-4 text-primary">Key UX Decisions</h4>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {project.uxDecisions.map((decision, index) => (
-              <div key={index} className="p-4 border rounded-lg">
-                <div className="flex items-center mb-2">
-                  <div className={`w-3 h-3 rounded-full ${index % 2 === 0 ? 'bg-blue-500' : 'bg-green-500'} mr-2`}></div>
-                  <h4 className="font-semibold">{decision.challenge}</h4>
-                </div>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <div>
-                    <span className="font-medium">Solution:</span>
-                    <p>{decision.solution}</p>
-                  </div>
-                  <div>
-                    <span className="font-medium">Rationale:</span>
-                    <p>{decision.rationale}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-      
-      {/* Outcome (if exists) */}
-      {project.uxOutcome && (
-        <div>
-          <h4 className="font-semibold mb-2 text-primary">Outcome</h4>
-          <p className="text-muted-foreground leading-relaxed">
-            {project.uxOutcome}
-          </p>
-        </div>
-      )}
-      
-      {/* Learnings (if exists) */}
-      {project.uxLearnings && (
-        <div className="p-4 bg-gradient-to-r from-blue-50 to-teal-50 rounded-lg">
-          <h4 className="font-semibold mb-2 text-primary">UX Learnings</h4>
-          <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
-            {project.uxLearnings}
-          </p>
-        </div>
-      )}
-    </CardContent>
-  </Card>
-)}
+            {/* UX Section */}
+            <ProjectUX project={project} />
+
+            {/* Future Plans */}
+            <ProjectFuturePlans projectId={project.id} />
 
             {/* Status Note */}
             {project.statusNote && (
@@ -300,92 +113,10 @@ const ProjectDetail = () => {
           </div>
 
           {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Technologies */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Technologies Used</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech, index) => (
-                    <Badge 
-                      key={index} 
-                      variant="secondary"
-                      className="bg-surface text-surface-foreground hover:bg-primary hover:text-primary-foreground transition-colors"
-                    >
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            {/* Project Info */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Project Details</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-sm text-muted-foreground mb-1">Category</h4>
-                  <p className="capitalize">{project.category || 'N/A'}</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-sm text-muted-foreground mb-1">Type</h4>
-                  <p className="capitalize">
-                    {project.type?.replace('-', ' ') || 'Personal Project'}
-                  </p>
-                </div>
-                {project.semester && (
-                  <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground mb-1">Academic Semester</h4>
-                    <p>{project.semester}</p>
-                  </div>
-                )}
-                {project.status && (
-                  <div>
-                    <h4 className="font-semibold text-sm text-muted-foreground mb-1">Status</h4>
-                    <div className="flex items-center gap-2">
-                      {getStatusIcon(project.status)}
-                      <span className="capitalize">{project.status}</span>
-                    </div>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-
-            {/* Quick Actions */}
-            <Card>
-              <CardHeader>
-                <CardTitle>Quick Actions</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {project.liveUrl && (
-                  <Button variant="outline" className="w-full justify-start" asChild>
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4 mr-2" />
-                      Visit Live Site
-                    </a>
-                  </Button>
-                )}
-                {project.githubUrl && (
-                  <Button variant="outline" className="w-full justify-start" asChild>
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github className="w-4 h-4 mr-2" />
-                      View Source Code
-                    </a>
-                  </Button>
-                )}
-                <Button variant="ghost" className="w-full justify-start" asChild>
-                  <Link to="/projects">
-                    <ArrowLeft className="w-4 h-4 mr-2" />
-                    Back to Projects
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+          <ProjectSidebar 
+            project={project}
+            getStatusIcon={getStatusIcon}
+          />
         </div>
       </div>
     </div>

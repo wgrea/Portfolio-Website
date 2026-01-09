@@ -3,13 +3,14 @@ import { useEffect } from "react";
 import Hero from "@/components/Hero";
 
 const Index = () => {
+  // Update title + meta for UX positioning
   useEffect(() => {
-    document.title = "William Greaney - Full-Stack Developer & UI/UX Designer";
+    document.title = "William Greaney - UX Engineer & Frontend Developer";
     
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 
-        'William Greaney is a skilled full-stack developer and UI/UX designer creating beautiful, functional web experiences. View portfolio projects and get in touch for collaboration.'
+        'William Greaney - UX Engineer building problem-first tools like Echotrip (work-abroad planner). React, SvelteKit, TypeScript. Remote-ready with customer empathy from retail experience.'
       );
     }
   }, []);
@@ -23,7 +24,7 @@ const Index = () => {
       {/* Footer */}
       <footer className="bg-surface/50 border-t border-border/50 py-12 px-6">
           <p className="text-sm text-muted-foreground">
-              © 2025 William Greaney. All rights reserved. Built with React, TypeScript, and Tailwind CSS.
+              © 2026 William Greaney. All rights reserved. Built with React, TypeScript, and Tailwind CSS.
             </p>
       </footer>
     </main>

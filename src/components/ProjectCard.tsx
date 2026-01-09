@@ -13,11 +13,12 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
+// In ProjectCard.tsx, your interface should match your Project interface
 interface ProjectCardProps {
   id: string;
   compact?: boolean;
   title: string;
-  description: string;
+  description: string; // This matches shortDescription from Project
   image: string;
   technologies: string[];
   liveUrl?: string;
@@ -29,7 +30,10 @@ interface ProjectCardProps {
   statusNote?: string;
   showSemester?: boolean;
   showStatus?: boolean;
+  className?: string;
 }
+
+// No changes needed to the component itself, just the interface
 
 const getStatusColor = (status?: string) => {
   switch (status) {
@@ -77,7 +81,8 @@ const ProjectCard = ({
   semester,
   statusNote,
   showSemester,
-  showStatus
+  showStatus,
+  className = '' // Add this with default value
 }: ProjectCardProps) => {
   const navigate = useNavigate();
 
@@ -99,6 +104,7 @@ const ProjectCard = ({
     <div 
       onClick={handleCardClick}
       className={`
+        ${className} // Add this line
         group bg-card rounded-xl shadow-soft hover:shadow-medium transition-all duration-300 overflow-hidden hover-lift h-full flex flex-col relative cursor-pointer
         ${featured ? 'ring-2 ring-primary/20' : ''}
         ${compact ? 'max-w-xs border border-border/50' : ''}
