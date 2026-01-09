@@ -1,5 +1,4 @@
 // src/components/Hero.tsx
-// src/components/Hero.tsx
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowDown, FileText } from "lucide-react";
