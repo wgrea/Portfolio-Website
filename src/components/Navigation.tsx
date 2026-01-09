@@ -21,9 +21,8 @@ const Navigation = () => {
 
   const navItems = [
     { label: 'Home', href: '/' },
-    { label: 'About', href: '/about' },
     { label: 'Projects', href: '/projects' },
-    // { label: 'Affiliate Projects', href: '/affiliate-projects' }, // I removed this line because I want this page to be only accessible through the Projects section
+    { label: 'About', href: '/about' },
     { label: 'Contact', href: '/contact' },
   ];
 
