@@ -23,16 +23,6 @@ const Hero = () => {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 leading-tight">
             William Greaney
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-3 sm:mb-4 font-medium">
-            UX Engineer
-          </p>
-          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            I design tools that cut through chaos. Built{" "}
-            <strong className="font-semibold text-primary">Echotrip</strong>—a
-            work-abroad planner with curated visa flows, cost calculators, and
-            nomad workspace guides. From retail customer friction to production
-            UX systems.
-          </p>
         </div>
 
         {/* Status Badges */}
