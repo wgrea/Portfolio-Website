@@ -103,7 +103,7 @@ If you’d like to collaborate, discuss UX engineering, or explore prototyping w
 
 - **Email:** wgreaney0405@gmail.com  
 - **LinkedIn:** https://www.linkedin.com/in/william-greaney-57a7a2276/  
-- **Portfolio:** (your deployed URL here)
+- **Portfolio:** https://william-greaney-portfolio-project.netlify.app/
 
 ---
 
