@@ -3,6 +3,7 @@ import { projects } from "@/data/projectsData";
 import ProjectCard from "@/components/ProjectCard";
 import { Globe, ArrowLeft, Map } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button"; // Add this import
 
 const TravelProjects = () => {
   const travelProjects = projects.filter(p => p.category === 'travel');
@@ -88,6 +89,25 @@ const TravelProjects = () => {
                 />
               )}
             </div>
+{/* Travel Companion Section */}
+<div className="mt-16 p-8 bg-surface rounded-2xl border border-border/50">
+  <div className="flex flex-col md:flex-row items-center gap-6">
+    <div className="w-24 h-24 bg-orange-100 dark:bg-orange-900/30 rounded-xl flex items-center justify-center">
+      <Globe className="w-12 h-12 text-orange-600" />
+    </div>
+    <div className="flex-grow">
+      <h4 className="text-lg font-bold">Travel Companion: Vespera</h4>
+      <p className="text-sm text-muted-foreground">
+        While Echotrip handles the planning, Vespera handles the destination. 
+        Explore cultural etiquette, safety scores, and solo-friendly nightlife for the locations you plan in Echotrip.
+      </p>
+    </div>
+    <Button variant="outline" asChild>
+      <Link to="/projects/vespera">Explore Vespera</Link>
+    </Button>
+  </div>
+</div>
+            
           </div>
         </div>
       </div>

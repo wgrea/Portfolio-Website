@@ -1,6 +1,4 @@
 // src/components/Projects.tsx
-import React from 'react';
-import ProjectCard from "@/components/ProjectCard";
 import { getProjectById, projects } from "@/data/projectsData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
@@ -13,10 +11,6 @@ import {
   Cpu,
   Sparkles,
   Layers,
-  BookOpen,
-  Code,
-  Gamepad2,
-  Map
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -24,16 +18,56 @@ const Projects = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
   
   const echotripProject = getProjectById("echotrip");
+  const vesperaProject = getProjectById("vespera"); // Add this
   
   // Group projects by main categories
   const categoryStats = {
-    enhancedSchool: projects.filter(p => p.type === 'enhanced-school').length,
+enhancedSchool: projects.filter(p => p.type === 'enhanced-school').length,
     travel: projects.filter(p => p.category === 'travel').length,
-    platform: projects.filter(p => p.category === 'platform').length,
+    // Combine Social & Platform into one count for the "Platforms & Commerce" card
+    platforms: projects.filter(p => ['platform', 'ecommerce', 'social', 'dating'].includes(p.category)).length,
     ecommerce: projects.filter(p => p.category === 'ecommerce').length,
     game: projects.filter(p => p.category === 'game').length,
     social: projects.filter(p => p.category === 'social' || p.category === 'dating').length,
   };
+
+  const FeaturedCard = ({ project, icon, badge, color = "blue" }) => {
+  const isBlue = color === "blue";
+  return (
+    <div className={`bg-gradient-to-br ${isBlue ? 'from-blue-50 to-teal-50 dark:from-blue-900/10 dark:to-teal-900/10 border-blue-200' : 'from-orange-50 to-amber-50 dark:from-orange-900/10 dark:to-amber-900/10 border-orange-200'} rounded-2xl p-6 border dark:border-opacity-30 flex flex-col h-full`}>
+      <div className="flex items-center gap-3 mb-4">
+        <div className={`p-2 ${isBlue ? 'bg-blue-100 dark:bg-blue-900/30' : 'bg-orange-100 dark:bg-orange-900/30'} rounded-lg`}>
+          {icon}
+        </div>
+        <div>
+          <h2 className="text-lg font-bold">{project.title}</h2>
+          <span className={`text-xs font-medium ${isBlue ? 'text-blue-600' : 'text-orange-600'} uppercase tracking-wider`}>{badge}</span>
+        </div>
+      </div>
+      
+      <p className="text-sm text-muted-foreground mb-4 flex-grow">
+        {project.shortDescription}
+      </p>
+
+      <div className="flex flex-wrap gap-2 mb-6">
+        {project.technologies.slice(0, 3).map((tech, i) => (
+          <span key={i} className="px-2 py-1 bg-surface/50 text-[10px] font-bold rounded border border-border/50 uppercase">
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      <div className="flex gap-3">
+        <Button size="sm" asChild>
+          <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </Button>
+        <Button size="sm" variant="outline" asChild>
+          <Link to={`/projects/${project.id}`}>Details</Link>
+        </Button>
+      </div>
+    </div>
+  );
+};
 
   return (
     <section 
@@ -121,7 +155,7 @@ const Projects = () => {
                       Platforms & Commerce
                     </h4>
                     <p className="text-xs text-muted-foreground">
-                      {categoryStats.platform + categoryStats.ecommerce} projects
+                      {categoryStats.platforms + categoryStats.ecommerce} projects
                     </p>
                   </div>
                 </div>
@@ -137,198 +171,144 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* Featured Project - SECOND */}
+        {/* Featured Projects - SECOND */}
         <div className="mb-16">
           <div className="text-center mb-8">
-            <h3 className="text-xl font-semibold mb-2">Current Featured Project</h3>
-            <p className="text-muted-foreground">See what I'm actively working on right now</p>
+            <h3 className="text-xl font-semibold mb-2">Current Featured Projects</h3>
+            <p className="text-muted-foreground">Production-ready applications and UX-first prototypes</p>
           </div>
           
-          {echotripProject && (
-            <div className="bg-gradient-to-br from-blue-50 to-teal-50 dark:from-blue-900/10 dark:to-teal-900/10 rounded-2xl p-6 sm:p-8 border border-blue-200 dark:border-blue-800/30">
-              <div className="flex flex-col lg:flex-row gap-8 items-start">
-                <div className="lg:w-2/3">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                      <Rocket className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <div>
-                      <h2 className="text-xl font-bold">Echotrip: Work-Abroad Planner</h2>
-                      <p className="text-sm text-muted-foreground">Production-ready travel planning application</p>
-                    </div>
-                  </div>
-                  
-                  <div className="space-y-4">
-                    <p className="text-muted-foreground">
-                      A comprehensive travel planning tool for remote workers and digital nomads, 
-                      featuring real-time cost calculations, visa guidance, and comprehensive work-abroad planning.
-                    </p>
-                    
-                    <div className="flex flex-wrap gap-2">
-                      {echotripProject.technologies.slice(0, 4).map((tech, index) => (
-                        <span 
-                          key={index}
-                          className="px-3 py-1 bg-surface text-surface-foreground rounded-full text-sm font-medium border border-border/50"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                    
-                    <div className="flex gap-3">
-                      {echotripProject.liveUrl && (
-                        <Button asChild>
-                          <a href={echotripProject.liveUrl} target="_blank" rel="noopener noreferrer">
-                            <Globe className="w-4 h-4 mr-2" />
-                            Live Demo
-                          </a>
-                        </Button>
-                      )}
-                      <Button variant="outline" asChild>
-                        <Link to={`/projects/${echotripProject.id}`}>
-                          <BookOpen className="w-4 h-4 mr-2" />
-                          View Details
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-                
-                <div className="lg:w-1/3">
-                  <div className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md">
-                    <img 
-                      src={echotripProject.image} 
-                      alt={echotripProject.title}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-4">
-                      <h4 className="font-medium mb-2">Project Evolution</h4>
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-xs">Academic Foundations</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                          <span className="text-xs">Enhanced Skills</span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
-                          <span className="text-xs font-medium">Production Ready</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Echotrip Card (Existing logic, just wrapped in a smaller column) */}
+            {echotripProject && (
+              <FeaturedCard 
+                project={echotripProject} 
+                icon={<Rocket className="w-6 h-6 text-blue-600" />} 
+                badge="Production Ready"
+              />
+            )}
 
-        {/* Development Journey - THIRD */}
-        <div className="mb-12">
-          <div className="text-center mb-8">
-            <h3 className="text-xl font-semibold mb-2">My Development Journey</h3>
-            <p className="text-muted-foreground">How I've grown from student to professional developer</p>
-          </div>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Foundation Phase */}
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-xl p-6 border border-green-200 dark:border-green-800/30">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
-                    <GraduationCap className="w-6 h-6 text-green-600 dark:text-green-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Foundation Phase</h4>
-                    <p className="text-xs text-muted-foreground">2022- Spring 2025</p>
-                  </div>
-                </div>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
-                    <span>Studied algorithms & data structures</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
-                    <span>Learned basic web development (HTML/CSS/JS)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
-                    <span>Built academic projects for coursework</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
-                    <span>Focused on fundamentals and problem-solving</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Skill Enhancement */}
-              <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10 rounded-xl p-6 border border-blue-200 dark:border-blue-800/30">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                    <Cpu className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Skill Enhancement</h4>
-                    <p className="text-xs text-muted-foreground">Summer-Fall 2025</p>
-                  </div>
-                </div>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
-                    <span>Adopted React, Next.js, TypeScript</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
-                    <span>Rebuilt academic projects with modern tools</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
-                    <span>Learned modern development workflows</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
-                    <span>Focused on UX/UI improvements</span>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Production Focus */}
-              <div className="bg-gradient-to-br from-blue-600/10 to-indigo-600/10 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-600/20 dark:border-blue-800/50">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="p-2 bg-blue-600 dark:bg-blue-700 rounded-lg">
-                    <Layers className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold">Production Focus</h4>
-                    <p className="text-xs text-blue-700 dark:text-blue-300">Late 2025-Present</p>
-                  </div>
-                </div>
-                <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
-                    <span>Building complete, scalable applications</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
-                    <span>Implementing proper architecture & deployment</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
-                    <span>Focusing on user-centered design</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
-                    <span>Creating production-ready solutions</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            {/* Vespera Card (New) */}
+            {vesperaProject && (
+              <FeaturedCard 
+                project={vesperaProject} 
+                icon={<Globe className="w-6 h-6 text-orange-600" />} 
+                badge="UX-First Prototype"
+                color="orange"
+              />
+            )}
           </div>
         </div>
+
+{/* Development Journey - THIRD */}
+<div className="mb-12">
+  <div className="text-center mb-8">
+    <h3 className="text-xl font-semibold mb-2">My UX Engineering Journey</h3>
+    <p className="text-muted-foreground">
+      How I evolved from fundamentals → modern tooling → UX‑first prototyping
+    </p>
+  </div>
+  
+  <div className="max-w-4xl mx-auto">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      {/* Foundation Phase */}
+      <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-xl p-6 border border-green-200 dark:border-green-800/30">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+            <GraduationCap className="w-6 h-6 text-green-600 dark:text-green-400" />
+          </div>
+          <div>
+            <h4 className="font-semibold">Foundations</h4>
+            <p className="text-xs text-muted-foreground">2022 – Spring 2025</p>
+          </div>
+        </div>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
+            <span>Algorithms, data structures, and problem‑solving</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
+            <span>HTML/CSS/JS fundamentals</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
+            <span>Early academic projects (Travel Discovery, Serendipity)</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
+            <span>First exposure to UI/UX concepts</span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Skill Enhancement */}
+      <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10 rounded-xl p-6 border border-blue-200 dark:border-blue-800/30">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+            <Cpu className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+          </div>
+          <div>
+            <h4 className="font-semibold">Modern Tooling</h4>
+            <p className="text-xs text-muted-foreground">Summer – Fall 2025</p>
+          </div>
+        </div>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
+            <span>Adopted React, SvelteKit, TypeScript</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
+            <span>Rebuilt academic projects with modern stacks</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
+            <span>Learned component systems & design tokens</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
+            <span>Early UX thinking through MingleMap (Lovable)</span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Production Focus */}
+      <div className="bg-gradient-to-br from-blue-600/10 to-indigo-600/10 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-600/20 dark:border-blue-800/50">
+        <div className="flex items-center gap-3 mb-4">
+          <div className="p-2 bg-blue-600 dark:bg-blue-700 rounded-lg">
+            <Layers className="w-6 h-6 text-white" />
+          </div>
+          <div>
+            <h4 className="font-semibold">UX‑First Prototyping</h4>
+            <p className="text-xs text-blue-700 dark:text-blue-300">Late 2025 – Present</p>
+          </div>
+        </div>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
+            <span>Built Echotrip using curated flows & async‑fit navigation</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
+            <span>Developed Vespera: cultural UX, semantic systems, safety UX</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
+            <span>FigJam ↔ Code loops for UX‑first prototyping</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
+            <span>Production‑ready deployments & real‑world iteration</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
       </div>
       {/* Footer */}
       <footer className="bg-surface/50 border-t border-border/50 py-12 px-6">

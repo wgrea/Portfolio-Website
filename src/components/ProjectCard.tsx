@@ -25,7 +25,7 @@ interface ProjectCardProps {
   githubUrl?: string;
   featured?: boolean;
   status?: 'live' | 'development' | 'beta' | 'complete' | 'paused';
-  type?: 'enhanced-school' | 'startup' | 'affiliate';
+  type?: 'enhanced-school' | 'startup' | 'affiliate' | "ux-prototype";
   semester?: string;
   statusNote?: string;
   showSemester?: boolean;

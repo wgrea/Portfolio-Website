@@ -7,6 +7,7 @@ import skillsplatformImage from "@/assets/project-skillsplatform.jpg";
 import traveldiscoveryImage from "@/assets/project-traveldiscovery.jpg";
 import affiliateEcommerceAlternativeBrickBrandImage from "@/assets/project-alternativebrickbrand.jpg";
 import echotripImage from "@/assets/project-echotrip.jpg";
+import vesperaImage from "@/assets/project-vespera.jpg";
 
 export interface Project {
   id: string;
@@ -20,7 +21,7 @@ export interface Project {
   category?: 'game' | 'social' | 'dating' | 'education' | 'platform' | 'travel' | 'ecommerce';
   featured?: boolean;
   status?: 'live' | 'development' | 'beta' | 'complete' | 'paused';
-  type?: 'enhanced-school' | 'startup' | 'affiliate';
+  type?: 'ux-prototype' | 'enhanced-school' | 'startup' | 'affiliate';
   semester?: string;
   statusNote?: string;
   journey?: {
@@ -46,6 +47,40 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+  {
+    id: "vespera",
+    title: "Vespera: Global Drinks & Social Explorer",
+    shortDescription: "A UX-first, culturally aware database exploring global drinking norms, safety expectations, and social environments.",
+    fullDescription: "Vespera bridges cultural research with intentional design. It moves beyond a simple database to provide safety context and social norms for global travelers. Built with a 'UX-first' workflow, the project prioritizes emotional readability and hand-crafted decision logic over over-engineered code.",
+    image: vesperaImage, // Import this in your assets
+    technologies: ["SvelteKit", "TypeScript", "Tailwind CSS", "Lucide"],
+    liveUrl: "https://vespera-ux.netlify.app/", // Update with your actual URL
+    githubUrl: "https://github.com/wgrea/event-planner",
+    category: "social",
+    featured: true,
+    type: "ux-prototype",
+    status: "complete",
+    statusNote: "Core experience stable; data-entry phase",
+    uxProblem: "Travelers often lack nuance regarding local social etiquette, leading to safety concerns or cultural misunderstandings in social spaces.",
+    uxResearch: "Synthesized real-world patterns from retail environments with cultural research on global social norms.",
+    uxDecisions: [
+      {
+        challenge: "Bridging real-world social intelligence with digital data",
+        solution: "Translating retail-observed social patterns into 'Venue Types' (Bars, Clubs, Events) that prioritize human context over technical categories.",
+        rationale: "Ensures the app feels grounded in real human behavior rather than just being a list of locations."
+      },
+      {
+        challenge: "Maintaining focus in an 'AI-vibe-coded' era",
+        solution: "Hand-crafted 'UX Folder' architecture focusing on meaning and intentional decision logic.",
+        rationale: "AI handles the mechanical; the designer must handle the meaning, context, and emotional readability."
+      }
+    ],
+    uxOutcome: "A stable, mobile-first guide that emphasizes safety and cultural awareness through a warm, semantic UI.",
+    journey: {
+      initialBuild: "Evolved from a FigJam ↔ Code loop, moving away from over-engineering toward high-order design principles.",
+      skills: "Systematic Design, Data Modeling, Cultural UX, DX Optimization"
+    }
+  },
   {
     id: "echotrip",
     title: "Echotrip: Work-Abroad Planner",

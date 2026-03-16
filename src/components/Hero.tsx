@@ -29,13 +29,14 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-surface/80 border border-border/50 rounded-full text-sm">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Open to UX Engineer roles
+            Open to UX Engineer & Prototyping roles
           </div>
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-surface/80 border border-border/50 rounded-full text-sm">
             <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse" />
             Remote / Async-first
           </div>
         </div>
+
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-8">
@@ -84,25 +85,28 @@ const Hero = () => {
             </Button>
           </Link>
         </div>
+{/* Skills */}
+<div className="flex flex-wrap justify-center gap-2 mb-8">
+  <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm border border-primary/20">
+    Problem-First UX
+  </span>
+  <span className="px-3 py-1.5 bg-accent/10 text-accent rounded-full text-sm border border-accent/20">
+    React + SvelteKit
+  </span>
+  <span className="px-3 py-1.5 bg-green-500/10 text-green-600 rounded-full text-sm border border-green-500/20">
+    Semantic Systems
+  </span>
+  <span className="px-3 py-1.5 bg-blue-500/10 text-blue-600 rounded-full text-sm border border-blue-500/20">
+    Non-Linear Navigation
+  </span>
+  <span className="px-3 py-1.5 bg-orange-500/10 text-orange-600 rounded-full text-sm border border-orange-500/20">
+    Cultural UX
+  </span>
+  <span className="px-3 py-1.5 bg-surface text-surface-foreground rounded-full text-sm border border-border/50">
+    Remote-Ready
+  </span>
+</div>
 
-        {/* Skills */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm border border-primary/20 hover:bg-primary/15 transition-colors duration-200">
-            Problem-First UX
-          </span>
-          <span className="px-3 py-1.5 bg-accent/10 text-accent rounded-full text-sm border border-accent/20 hover:bg-accent/15 transition-colors duration-200">
-            React + SvelteKit
-          </span>
-          <span className="px-3 py-1.5 bg-green-500/10 text-green-600 rounded-full text-sm border border-green-500/20 hover:bg-green-500/15 transition-colors duration-200">
-            Less-is-More Curation
-          </span>
-          <span className="px-3 py-1.5 bg-blue-500/10 text-blue-600 rounded-full text-sm border border-blue-500/20 hover:bg-blue-500/15 transition-colors duration-200">
-            Non-Linear Navigation
-          </span>
-          <span className="px-3 py-1.5 bg-surface text-surface-foreground rounded-full text-sm border border-border/50 hover:border-primary/30 transition-colors duration-200">
-            Remote-Ready
-          </span>
-        </div>
       </div>
 
       {/* Floating Elements */}
