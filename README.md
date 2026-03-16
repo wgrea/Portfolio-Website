@@ -1,84 +1,112 @@
-# Welcome to your Lovable project
+# 🌐 **Portfolio — William Greaney**  
+A UX‑first, prototype‑driven portfolio built with React, TypeScript, Tailwind, and shadcn/ui.
 
-# Install dependencies (run this first if you just cloned/downloaded)
-npm install
-npm run build
-npm run dev
+This site showcases my work across UX engineering, cultural UX systems, async‑fit workflows, and high‑order prototyping. Projects include Echotrip (work‑abroad planner), Vespera (cultural etiquette explorer), and enhanced academic rebuilds.
 
-# Preview production build locally (test before deploying)
-npm run preview
+---
 
-# Lint your code (check for errors)
-npm run lint
+## 🚀 **Tech Stack**
 
-## Project info
+This portfolio is built with:
 
-**URL**: https://lovable.dev/projects/fa45ca27-a649-4442-93bc-bb8b773d05d2
+- **React + TypeScript**  
+- **Vite** (fast dev environment)  
+- **Tailwind CSS** (utility‑first styling)  
+- **shadcn/ui** (accessible, theme‑friendly components)  
+- **Framer Motion** (micro‑interactions & scroll animations)  
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🧩 **Project Structure**
 
-**Use Lovable**
+```
+src/
+  components/      → Reusable UI + layout components
+  pages/           → Route-level pages (Home, Projects, About, Contact)
+  data/            → Project metadata + content
+  hooks/           → Scroll animations, utilities
+  assets/          → Images, icons, profile photo
+```
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/fa45ca27-a649-4442-93bc-bb8b773d05d2) and start prompting.
+The site is intentionally modular and easy to extend — adding a new project is as simple as updating `projectsData.ts`.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🛠️ **Local Development**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+Clone the repo and install dependencies:
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Build for production:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```sh
+npm run build
+```
 
-**Use GitHub Codespaces**
+Preview the production build locally:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+```sh
+npm run preview
+```
 
-## What technologies are used for this project?
+Lint the codebase:
 
-This project is built with:
+```sh
+npm run lint
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🌍 **Deployment**
 
-Simply open [Lovable](https://lovable.dev/projects/fa45ca27-a649-4442-93bc-bb8b773d05d2) and click on Share -> Publish.
+This project is deployed through **Lovable**, which handles build + hosting.
 
-## Can I connect a custom domain to my Lovable project?
+To publish updates:
 
-Yes, you can!
+1. Push changes to the repo  
+2. Open the project in Lovable  
+3. Go to **Share → Publish**  
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Custom domains can be configured in:  
+**Project → Settings → Domains**
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+---
+
+## ✨ **About This Portfolio**
+
+This site reflects my approach to UX engineering:
+
+- **Problem‑first design**  
+- **Less‑is‑more curation**  
+- **Non‑linear navigation**  
+- **Semantic systems**  
+- **Async‑fit workflows**  
+- **Cultural UX & emotional readability**  
+
+Each project page includes:
+
+- UX problem framing  
+- Research insights  
+- Decision rationale  
+- Outcomes & learnings  
+- Journey notes  
+
+---
+
+## 📬 **Contact**
+
+If you’d like to collaborate, discuss UX engineering, or explore prototyping work:
+
+- **Email:** wgreaney0405@gmail.com  
+- **LinkedIn:** https://www.linkedin.com/in/william-greaney-57a7a2276/  
+- **Portfolio:** (your deployed URL here)
+
+---
+
+## 📄 **License**
+
+This portfolio is open for inspiration, but please do not copy or redistribute the design, content, or project descriptions without permission.
