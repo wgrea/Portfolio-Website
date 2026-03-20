@@ -53,25 +53,39 @@ const About = () => {
           {/* Content */}
           <div className={`space-y-8 animate-on-scroll stagger-2 ${isVisible ? 'visible' : ''}`}>
 
-            {/* Core Positioning */}
-            <div className="space-y-4 text-muted-foreground leading-relaxed">
-              <p className="text-sm sm:text-base">
-                I design tools like <strong>Echotrip</strong>—a work‑abroad planner that cuts through 
-                scattered visa rules, vague costs, and endless destinations using curated flows and 
-                non-linear navigation.
-              </p>
+{/* Core Positioning */}
+<div className="leading-relaxed text-muted-foreground space-y-5">
+  <p className="text-sm sm:text-base">
+    I’m a UX‑driven designer focused on clarity, semantics, and cultural context. 
+    My process centers on building tools that make complex systems approachable.
+  </p>
 
-              <p className="text-sm sm:text-base">
-                I also build cultural UX systems like <strong>Vespera</strong>, a global etiquette and 
-                nightlife explorer designed with a UX‑first workflow. It focuses on emotional readability, 
-                safety expectations, and cultural context—the parts of UX that AI tools can’t automate.
-              </p>
+  <p className="text-sm sm:text-base">
+    I design tools like <strong>Echotrip</strong> — a work‑abroad planner that cuts through 
+    scattered visa rules, vague costs, and endless destinations using curated flows 
+    and non‑linear navigation.
+  </p>
 
-              <p className="text-sm sm:text-base">
-                I learn by shipping complete projects, refining semantic systems, and iterating based on 
-                real-world feedback while balancing part-time work.
-              </p>
-            </div>
+  <p className="text-sm sm:text-base">
+    I also build cultural UX systems like <strong>Vespera</strong>, a global etiquette and 
+    nightlife explorer designed with a UX‑first workflow. It focuses on emotional readability, 
+    safety expectations, and cultural nuance — the parts of UX that AI tools can’t automate.
+  </p>
+
+  <p className="text-sm sm:text-base">
+    I learn by shipping complete projects, refining semantic systems, and iterating based on 
+    real‑world feedback while balancing part‑time work.
+  </p>
+
+  <div className="mt-6 p-5 bg-blue-100/40 dark:bg-blue-800/10 rounded-lg border-l-4 border-blue-400">
+    <p className="text-sm sm:text-base text-blue-800 dark:text-blue-300 italic text-balance">
+      “Working part‑time gave me something rare in tech: pacing. It let me slow down, think clearly, 
+      and prioritize structure over speed. That’s why Vespera, Echotrip, and even my cancelled project 
+      became clarity‑first systems instead of rushed MVPs.”
+    </p>
+  </div>
+</div>
+
 
             {/* Design Philosophy */}
             <div className="p-6 bg-surface/50 rounded-xl border border-border/50 space-y-4">
