@@ -20,7 +20,7 @@ export interface Project {
   githubUrl?: string;
   category?: 'game' | 'social' | 'dating' | 'education' | 'platform' | 'travel' | 'ecommerce';
   featured?: boolean;
-  status?: 'live' | 'development' | 'beta' | 'complete' | 'paused';
+  status?: 'live' | 'development' | 'beta' | 'complete' | 'paused' | 'cancelled';
   type?: 'ux-prototype' | 'enhanced-school' | 'startup' | 'affiliate';
   semester?: string;
   statusNote?: string;
@@ -94,9 +94,9 @@ export const projects: Project[] = [
     featured: true,
     type: "startup",
     status: "beta",
-    statusNote: "Alpha core live; Saved Plans next",
-    uxProblem: "Scattered advice, vague costs, confusing visas, endless destination lists overwhelm work-abroad planners.",
-    uxResearch: "Built from personal research pain points + analysis of 5 major travel planning tools.",
+    statusNote: "Alpha core live; UX‑first redesign underway",
+    uxProblem: "Scattered advice, vague costs, confusing visas, endless destination lists overwhelm work-abroad planners — especially when timing (months, seasons, cost windows) isn’t clearly connected to decisions.",
+    uxResearch: "Built from personal research pain points + analysis of 5 major travel planning tools. Realized that month‑based filtering helps with intentionality — not to force decisions, but to understand when something is viable or affordable.",
     uxDecisions: [
       {
         challenge: "Information overload across planning stages",
@@ -107,7 +107,13 @@ export const projects: Project[] = [
         challenge: "Uncertain cost estimates across currencies",
         solution: "Dynamic real-time COL calculator",
         rationale: "Eliminates 'surprise expense' anxiety"
-      }
+      },
+      {
+  challenge: "Hard to connect timing with actual decisions",
+  solution: "Month-based filters for flights, events, and costs",
+  rationale: "Supports intentional planning by showing when something is viable or affordable — even if the choice is to skip it."
+}
+
     ],
     uxOutcome: "Transforms planning chaos into structured, intentional decision flows.",
     journey: {
@@ -190,34 +196,7 @@ export const projects: Project[] = [
       rationale: "Reduces decision fatigue while maintaining discovery serendipity"
     }],
   },
-  {
-    id: "skillshub",
-    title: "Skills & Projects Platform",
-    shortDescription: "Modern platform for discovering trending skills and project ideas with data transparency and comprehensive market insights.",
-    fullDescription: "SkillsHub is an MVP platform designed to help developers discover trending skills and project ideas. Features advanced filtering, bookmarking, market insights, and a premium pricing model. Built independently through Startery X Antler startup program with only 3 virtual meetings (one cancelled—would have been the final meeting).",
-    image: skillsplatformImage,
-    technologies: ["React", "TypeScript", "shadcn/ui", "Framer Motion", "Vite", "Supabase"],
-    liveUrl: "https://68e2d7265c52e6000877244f--friendly-alpaca-7f0f9c.netlify.app/#/auth",
-    githubUrl: "https://github.com/wgrea/SkillsHub",
-    featured: true,
-    type: "startup",
-    category: "platform",
-    status: "development",
-    statusNote: "MVP deployed with gated UI; pricing page live, account flow in progress",
-    journey: {
-      initialBuild: "Solo-built through Startery X Antler program with minimal structured meetings (3 total, 1 cancelled). This forced strong self-management and async planning. Applied lessons from MingleMap by using Supabase for instant auth setup—avoiding weeks of custom development.",
-      challenges: "Working independently with sparse program structure required creating my own sprint cycles and documentation practices. Maintained momentum through self-imposed roadmaps and async community engagement when the final program meeting was cancelled.",
-      decisions: "Chose Supabase specifically because of MingleMap lessons—avoiding custom auth hell. Structured as a serious project using AI chatbots + frameworks approach rather than bolt.new, ensuring working core flows before polish. Implemented modular architecture for easier async iteration.",
-      skills: "Full product ownership, solo development under minimal external structure, applying past project lessons, strategic tool selection, self-imposed sprint management, async roadmap maintenance"
-    }, // ← ADD THIS COMMA HERE
-    uxProblem: "How might we help developers discover relevant skills without the paralysis of infinite learning paths?",
-    uxResearch: "Interviewed 3 junior developers and identified: 1) Overwhelm from too many options, 2) Uncertainty about market relevance, 3) Need for structured progression.",
-    uxDecisions: [{
-      challenge: "Making complex skill trees approachable",
-      solution: "Progressive disclosure with 'start here' paths",
-      rationale: "Scaffolds learning while maintaining advanced options"
-    }]
-  },
+  // Removed SkillsHub since it is cancelled and become just a case study
   {
     id: "blackjack-suite",
     title: "Advanced Blackjack Suite",

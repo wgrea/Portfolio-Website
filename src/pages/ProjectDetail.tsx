@@ -56,13 +56,6 @@ const ProjectDetail = () => {
   return (
     <div className="min-h-screen bg-background py-16 px-4 sm:px-6">
       <div className="max-w-5xl mx-auto">
-        {/* Back Button */}
-        <Link to="/projects">
-          <Button variant="ghost" className="mb-8 group">
-            <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
-            Back to Projects
-          </Button>
-        </Link>
 
         {/* Project Header */}
         <ProjectHeader 

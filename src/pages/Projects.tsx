@@ -11,6 +11,8 @@ import {
   Cpu,
   Sparkles,
   Layers,
+  XCircle,  // Add this
+  Zap        // Add this
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -77,18 +79,19 @@ enhancedSchool: projects.filter(p => p.type === 'enhanced-school').length,
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full mb-4">
-            <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
-            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Project Portfolio</span>
-          </div>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-teal-500 dark:from-blue-400 dark:to-teal-300 bg-clip-text text-transparent">
-            Explore My Work
-          </h1>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-            Browse projects by category to see how I've evolved from academic foundations to production-ready applications
-          </p>
-        </div>
+<div className="text-center mb-12">
+  <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full mb-4">
+    <Sparkles className="w-4 h-4 text-blue-600 dark:text-blue-400" />
+    <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Prototypes + Case Studies</span>
+  </div>
+  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-blue-600 to-teal-500 dark:from-blue-400 dark:to-teal-300 bg-clip-text text-transparent">
+    Explore My UX Process
+  </h1>
+  <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
+    Dive into interactive prototypes and narrative case studies that trace my journey from concept to polished product experiences.
+  </p>
+</div>
+
 
         {/* Category Navigation - FIRST */}
         <div className="mb-16">
@@ -199,6 +202,41 @@ enhancedSchool: projects.filter(p => p.type === 'enhanced-school').length,
             )}
           </div>
         </div>
+
+{/* 3. CANCELLED PROJECT - NEW SECTION */}
+<div className="mb-16">
+  <div className="text-center mb-8">
+    <h3 className="text-xl font-semibold mb-2 flex items-center justify-center gap-2">
+      <XCircle className="w-5 h-5 text-orange-500" />
+      Cancelled Project
+    </h3>
+    <p className="text-muted-foreground text-sm">
+      Why I shut down an AI‑generated MVP — and what it taught me about UX clarity
+    </p>
+  </div>
+  
+  <div className="max-w-md mx-auto">
+    <Link 
+      to="/projects/cancelled" 
+      className="group block bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 border-2 border-orange-200/50 dark:border-orange-800/50 rounded-2xl p-8 text-center hover:shadow-xl hover:border-orange-300 transition-all hover:-translate-y-1"
+    >
+      <div className="w-16 h-16 bg-orange-100 dark:bg-orange-900/30 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-200 transition-colors">
+        <Zap className="w-8 h-8 text-orange-600 group-hover:scale-110 transition-transform" />
+      </div>
+      <h4 className="font-bold text-xl mb-3 bg-gradient-to-r from-orange-600 to-red-500 bg-clip-text text-transparent">
+        SkillsHub
+      </h4>
+      <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+        Bolt.new MVP → Static model. When speed exposed the real UX problem.
+      </p>
+      <div className="flex items-center justify-center text-sm text-orange-600 font-semibold gap-1">
+        <span>Read case study</span>
+        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+      </div>
+    </Link>
+  </div>
+</div>
+
 
 {/* Development Journey - THIRD */}
 <div className="mb-12">

@@ -39,73 +39,79 @@ const Hero = () => {
 
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 sm:mb-8">
-                    <Button
-            variant="hero"
-            size="lg"
-            asChild
-            className="group w-full sm:w-auto bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 text-white shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300"
-          >
-            <a
-              href="/William_Greaney_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center"
-            >
-              Resume
-              <FileText className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform duration-300" />
-            </a>
-          </Button>
-          <Link to="/projects" className="w-full sm:w-auto">
-            <Button
-              variant="hero"
-              size="lg"
-              className="group w-full bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 text-white shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300"
-            >
-              View Projects
-              <ArrowDown className="w-4 h-4 ml-2 group-hover:translate-y-1 transition-transform duration-300" />
-            </Button>
-          </Link>
-          <Link to="/about" className="w-full sm:w-auto">
-            <Button
-              variant="elegant"
-              size="lg"
-              className="w-full border-border/50 hover:border-primary/50 transition-all duration-300"
-            >
-              About
-            </Button>
-          </Link>
-          <Link to="/contact" className="w-full sm:w-auto">
-            <Button
-              variant="elegant"
-              size="lg"
-              className="w-full border-border/50 hover:border-primary/50 transition-all duration-300"
-            >
-              Contact
-            </Button>
-          </Link>
-        </div>
-{/* Skills */}
-<div className="flex flex-wrap justify-center gap-2 mb-8">
-  <span className="px-3 py-1.5 bg-primary/10 text-primary rounded-full text-sm border border-primary/20">
-    Problem-First UX
-  </span>
-  <span className="px-3 py-1.5 bg-accent/10 text-accent rounded-full text-sm border border-accent/20">
-    React + SvelteKit
-  </span>
-  <span className="px-3 py-1.5 bg-green-500/10 text-green-600 rounded-full text-sm border border-green-500/20">
-    Semantic Systems
-  </span>
-  <span className="px-3 py-1.5 bg-blue-500/10 text-blue-600 rounded-full text-sm border border-blue-500/20">
-    Non-Linear Navigation
-  </span>
-  <span className="px-3 py-1.5 bg-orange-500/10 text-orange-600 rounded-full text-sm border border-orange-500/20">
-    Cultural UX
-  </span>
-  <span className="px-3 py-1.5 bg-surface text-surface-foreground rounded-full text-sm border border-border/50">
-    Remote-Ready
-  </span>
+        <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 mb-8">
+  {/* Primary Calls to Action */}
+  <Button
+    asChild
+    variant="hero"
+    size="lg"
+    className="group w-full sm:w-auto bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 text-white shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300"
+  >
+    <a
+      href="/William_Greaney_Resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center justify-center"
+    >
+      Resume
+      <FileText className="w-4 h-4 ml-2 group-hover:scale-110 transition-transform duration-300" />
+    </a>
+  </Button>
+
+  <Button
+    asChild
+    variant="hero"
+    size="lg"
+    className="group w-full sm:w-auto bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 text-white shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 transition-all duration-300"
+  >
+    <Link to="/projects" className="flex items-center justify-center">
+      View Prototypes + Case Studies
+      <ArrowDown className="w-4 h-4 ml-2 group-hover:translate-y-1 transition-transform duration-300" />
+    </Link>
+  </Button>
+
+  {/* Secondary Navigation */}
+  {[
+    { label: "About", href: "/about" },
+    { label: "Contact", href: "/contact" },
+  ].map(({ label, href }) => (
+    <Button
+      key={label}
+      asChild
+      variant="elegant"
+      size="lg"
+      className="group w-full sm:w-auto border border-border/50 hover:border-primary/50 hover:text-primary transition-all duration-300"
+    >
+      <Link to={href} className="flex items-center justify-center">
+        {label}
+      </Link>
+    </Button>
+  ))}
 </div>
+
+{/* Skills */}
+<section aria-label="Core focus areas" className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8">
+  {[
+    { label: 'Problem-First UX', color: 'primary' },
+    { label: 'React + SvelteKit', color: 'accent' },
+    { label: 'Semantic Systems', color: 'green' },
+    { label: 'Non-Linear Navigation', color: 'blue' },
+    { label: 'Cultural UX', color: 'orange' },
+    { label: 'Remote-Ready', color: 'surface' },
+  ].map((tag) => (
+    <span
+      key={tag.label}
+      className={`px-3 py-1.5 rounded-full text-sm border transition-transform hover:scale-105 hover:brightness-110
+        ${tag.color === 'surface'
+          ? 'bg-surface text-surface-foreground border-border/50'
+          : `bg-${tag.color}-500/10 text-${tag.color}-600 border-${tag.color}-500/20`
+        }`}
+    >
+      {tag.label}
+    </span>
+  ))}
+</section>
+
 
       </div>
 

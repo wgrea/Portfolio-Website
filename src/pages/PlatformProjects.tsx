@@ -5,24 +5,25 @@ import { ShoppingBag, ArrowLeft, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PlatformProjects = () => {
-  // Separate pure platform/learning tools from social evolution
-  const skillsProjects = projects.filter(p => p.category === 'platform');
+  // In PlatformProjects.tsx
+  const skillsProjects = projects.filter(p => 
+    p.category === 'platform' && 
+    p.status !== 'cancelled' &&  // SkillsHub disappears
+    p.featured !== false          // Only active/alive projects
+  );
   const ecommerceProjects = projects.filter(p => p.category === 'ecommerce');
-  
-  // Specific IDs for the Social Discovery timeline
+    
   const serendipity = projects.find(p => p.id === "serendipity");
   const minglemap = projects.find(p => p.id === "minglemap");
   const vespera = projects.find(p => p.id === "vespera");
+  // ADD THIS LINE - find the Alternative Brick Brands project
+  const alternativeBrickBrands = projects.find(p => p.id === "alternative-brick-brands");
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50/20 to-transparent dark:from-purple-900/5 py-12 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-8">
-          <Link to="/projects" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-6">
-            <ArrowLeft className="w-4 h-4" />
-            Back to Projects
-          </Link>
           
           <div className="flex items-center gap-3 mb-4">
             <div className="p-2 bg-purple-100 dark:bg-purple-900/30 rounded-lg">
@@ -30,23 +31,8 @@ const PlatformProjects = () => {
             </div>
             <div>
               <h1 className="text-2xl sm:text-3xl font-bold">Platforms & Commerce</h1>
-              <p className="text-muted-foreground">Skill platforms, e-commerce sites, and social applications</p>
+              <p className="text-muted-foreground">E-commerce experiments → social discovery evolution</p>
             </div>
-          </div>
-        </div>
-
-        {/* 1. Skills & Learning Platforms */}
-        <div className="mb-16">
-          <h3 className="text-lg font-semibold mb-6">Skills & Learning Platforms</h3>
-          <div className="space-y-8">
-            {skillsProjects.map(project => (
-              <ProjectCard
-                key={project.id}
-                {...project}
-                description={project.shortDescription}
-                compact={false}
-              />
-            ))}
           </div>
         </div>
 
@@ -77,7 +63,7 @@ const PlatformProjects = () => {
       </p>
       {serendipity && (
         <ProjectCard 
-          {...serendipity} 
+          {...(serendipity as any)} // Quick fix: add 'as any'
           description={serendipity.shortDescription} 
           compact={true} 
           className="max-w-xl"
@@ -104,13 +90,40 @@ const PlatformProjects = () => {
       </p>
       {minglemap && (
         <ProjectCard 
-          {...minglemap} 
+          {...(minglemap as any)} 
           description={minglemap.shortDescription} 
           compact={true} 
           className="max-w-xl shadow-sm"
         />
       )}
     </div>
+
+    {/* Step 2.5: Alternative Brick Brands - SMALL THUMBNAIL */}
+<div className="relative">
+  <div className="absolute -left-[41px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-background" />
+  <div className="flex items-center gap-2 mb-2">
+    <span className="text-xs font-medium text-purple-600 uppercase tracking-wider">
+      Aug-Sep 2025
+    </span>
+    <span className="text-[10px] px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full">
+      E-commerce → Discovery
+    </span>
+  </div>
+  <h4 className="font-bold text-lg">Alternative Brick Brands</h4>
+  <p className="text-sm text-muted-foreground mb-3">
+    Pivoted WordPress → Next.js affiliate site. Discovered e-commerce 
+    flows feed into social discovery patterns.
+  </p>
+  {alternativeBrickBrands && (
+    <ProjectCard 
+      {...(alternativeBrickBrands as any)} 
+      description={alternativeBrickBrands.shortDescription} 
+      compact={true}  // ← SMALL THUMBNAIL
+      className="max-w-sm opacity-80"  // ← Smaller + subtle
+    />
+  )}
+</div>
+
 
     {/* Step 3: Vespera */}
     <div className="relative">
@@ -131,7 +144,7 @@ const PlatformProjects = () => {
       </p>
       {vespera && (
         <ProjectCard 
-          {...vespera} 
+          {...(vespera as any)} 
           description={vespera.shortDescription} 
           compact={false} 
           className="max-w-2xl border-orange-200 dark:border-orange-900/50 shadow-md"

@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import PlatformProjects from "./pages/PlatformProjects";
 import TravelProjects from "./pages/TravelProjects";
 import AcademicProjects from "./pages/AcademicProjects";
+import CancelledProject from '@/pages/CancelledProject';
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/projects/academic" element={<AcademicProjects />} />
           <Route path="/projects/travel" element={<TravelProjects />} />
           <Route path="/projects/platforms" element={<PlatformProjects />} />
+          <Route path="/projects/cancelled" element={<CancelledProject />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
