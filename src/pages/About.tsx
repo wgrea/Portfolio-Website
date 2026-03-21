@@ -1,6 +1,7 @@
-// src/pages/About.tsx — REVISED VERSION
+// src/pages/About.tsx
 import profileImage from "@/assets/profile-photo.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { GraduationCap, Cpu, Layers } from "lucide-react";
 
 const About = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
@@ -30,7 +31,7 @@ const About = () => {
             UX Engineer & Prototype Specialist
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
-            I design problem-first tools and cultural UX systems using “less is more” curation, 
+            I design problem-first tools and cultural UX systems using "less is more" curation, 
             semantic structure, and non-linear navigation.
           </p>
         </div>
@@ -52,40 +53,149 @@ const About = () => {
 
           {/* Content */}
           <div className={`space-y-8 animate-on-scroll stagger-2 ${isVisible ? 'visible' : ''}`}>
+            {/* Core Positioning */}
+            <div className="leading-relaxed text-muted-foreground space-y-5">
+              <p className="text-sm sm:text-base">
+                I'm a UX‑driven designer focused on clarity, semantics, and cultural context. 
+                My process centers on building tools that make complex systems approachable.
+              </p>
 
-{/* Core Positioning */}
-<div className="leading-relaxed text-muted-foreground space-y-5">
-  <p className="text-sm sm:text-base">
-    I’m a UX‑driven designer focused on clarity, semantics, and cultural context. 
-    My process centers on building tools that make complex systems approachable.
-  </p>
+              <p className="text-sm sm:text-base">
+                I design tools like <strong>Echotrip</strong> — a work‑abroad planner that cuts through 
+                scattered visa rules, vague costs, and endless destinations using curated flows 
+                and non‑linear navigation.
+              </p>
 
-  <p className="text-sm sm:text-base">
-    I design tools like <strong>Echotrip</strong> — a work‑abroad planner that cuts through 
-    scattered visa rules, vague costs, and endless destinations using curated flows 
-    and non‑linear navigation.
-  </p>
+              <p className="text-sm sm:text-base">
+                I also build cultural UX systems like <strong>Vespera</strong>, a global etiquette and 
+                nightlife explorer designed with a UX‑first workflow. It focuses on emotional readability, 
+                safety expectations, and cultural nuance — the parts of UX that AI tools can't automate.
+              </p>
 
-  <p className="text-sm sm:text-base">
-    I also build cultural UX systems like <strong>Vespera</strong>, a global etiquette and 
-    nightlife explorer designed with a UX‑first workflow. It focuses on emotional readability, 
-    safety expectations, and cultural nuance — the parts of UX that AI tools can’t automate.
-  </p>
+              <p className="text-sm sm:text-base">
+                I learn by shipping complete projects, refining semantic systems, and iterating based on 
+                real‑world feedback while balancing part‑time work.
+              </p>
 
-  <p className="text-sm sm:text-base">
-    I learn by shipping complete projects, refining semantic systems, and iterating based on 
-    real‑world feedback while balancing part‑time work.
-  </p>
+              <div className="mt-6 p-5 bg-blue-100/40 dark:bg-blue-800/10 rounded-lg border-l-4 border-blue-400">
+                <p className="text-sm sm:text-base text-blue-800 dark:text-blue-300 italic text-balance">
+                  "Working part‑time gave me something rare in tech: pacing. It let me slow down, think clearly, 
+                  and prioritize structure over speed. That's why Vespera, Echotrip, and even my cancelled project 
+                  became clarity‑first systems instead of rushed MVPs."
+                </p>
+              </div>
+            </div>
 
-  <div className="mt-6 p-5 bg-blue-100/40 dark:bg-blue-800/10 rounded-lg border-l-4 border-blue-400">
-    <p className="text-sm sm:text-base text-blue-800 dark:text-blue-300 italic text-balance">
-      “Working part‑time gave me something rare in tech: pacing. It let me slow down, think clearly, 
-      and prioritize structure over speed. That’s why Vespera, Echotrip, and even my cancelled project 
-      became clarity‑first systems instead of rushed MVPs.”
-    </p>
-  </div>
-</div>
+            {/* Foundations Phase */}
+            <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/10 dark:to-emerald-900/10 rounded-xl p-6 border border-green-200 dark:border-green-800/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg">
+                  <GraduationCap className="w-6 h-6 text-green-600 dark:text-green-400" />
+                </div>
+                <div>
+                  <h4 className="font-semibold">Foundations</h4>
+                  <p className="text-xs text-muted-foreground">2022 – Spring 2025</p>
+                </div>
+              </div>
 
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
+                  <span>Algorithms, data structures, COAD, and operating systems</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
+                  <span>First coding class: HTML → CSS (language learning game)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
+                  <span>Second coding class: JavaScript fundamentals</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
+                  <span>Web Apps course: Blackjack (second major JS class)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
+                  <span>MingleMap (senior capstone) built with HTML/CSS/JS</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-green-500 rounded-full mt-2"></div>
+                  <span>First awareness of UI/UX near graduation</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Modern Tooling */}
+            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/10 dark:to-cyan-900/10 rounded-xl p-6 border border-blue-200 dark:border-blue-800/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
+                  <Cpu className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+                </div>
+                <div>
+                  <h4 className="font-semibold">Modern Tooling</h4>
+                  <p className="text-xs text-muted-foreground">Summer – Fall 2025</p>
+                </div>
+              </div>
+
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
+                  <span>Adopted React, SvelteKit, and TypeScript</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
+                  <span>Rebuilt academic projects with modern stacks</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
+                  <span>Learned component systems & design tokens</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
+                  <span>Lovable versions of MingleMap and other projects</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
+                  <span>Started exploring UX as a career path while preparing to apply</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-blue-500 rounded-full mt-2"></div>
+                  <span>Generated the early SkillsHub MVP (later retired)</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Production Focus */}
+            <div className="bg-gradient-to-br from-blue-600/10 to-indigo-600/10 dark:from-blue-900/20 dark:to-indigo-900/20 rounded-xl p-6 border border-blue-600/20 dark:border-blue-800/50">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-blue-600 dark:bg-blue-700 rounded-lg">
+                  <Layers className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h4 className="font-semibold">UX‑First Prototyping</h4>
+                  <p className="text-xs text-blue-700 dark:text-blue-300">Late 2025 – Present</p>
+                </div>
+              </div>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
+                  <span>Built Echotrip using curated flows & async‑fit navigation</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
+                  <span>Developed Vespera: cultural UX, semantic systems, safety UX</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
+                  <span>FigJam ↔ Code loops for UX‑first prototyping</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <div className="w-1 h-1 bg-blue-600 rounded-full mt-2"></div>
+                  <span>Production‑ready deployments & real‑world iteration</span>
+                </li>
+              </ul>
+            </div>
 
             {/* Design Philosophy */}
             <div className="p-6 bg-surface/50 rounded-xl border border-border/50 space-y-4">
@@ -193,14 +303,7 @@ const About = () => {
               </div>
             </div>
 
-            {/* What I'm Working On */}
-            <div className="p-6 bg-surface/50 rounded-xl border border-border/50">
-              <h3 className="text-xl font-semibold text-foreground mb-2">Currently</h3>
-              <p className="text-sm text-muted-foreground">
-                Refining Vespera’s cultural taxonomy, improving Echotrip’s Saved Plans feature, 
-                and exploring async-fit UX patterns for global tools.
-              </p>
-            </div>
+            {/* Removed: What I'm Working On */}
 
           </div>
         </div>
