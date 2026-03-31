@@ -19,7 +19,7 @@ import { Button } from "@/components/ui/button";
 const Projects = () => {
   const { ref, isVisible } = useScrollAnimation(0.1);
   
-  const echotripProject = getProjectById("echotrip");
+  const echoglazeProject = getProjectById("echoglaze");
   const vesperaProject = getProjectById("vespera");
   
   // Group projects by main categories
@@ -105,14 +105,14 @@ const Projects = () => {
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Echotrip Card */}
-            {echotripProject && (
-              <FeaturedCard 
-                project={echotripProject} 
-                icon={<Rocket className="w-6 h-6 text-blue-600" />} 
-                badge="Production Ready"
-              />
-            )}
+{/* EchoGlaze Featured Card */}
+{echoglazeProject && (
+  <FeaturedCard 
+    project={echoglazeProject}
+    icon={<Rocket className="w-6 h-6 text-orange-600" />}
+    badge="Production Ready"
+  />
+)}
 
             {/* Vespera Card */}
             {vesperaProject && (

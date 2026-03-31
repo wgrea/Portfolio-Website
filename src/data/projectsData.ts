@@ -7,6 +7,7 @@ import skillsplatformImage from "@/assets/project-skillsplatform.jpg";
 import traveldiscoveryImage from "@/assets/project-traveldiscovery.jpg";
 import affiliateEcommerceAlternativeBrickBrandImage from "@/assets/project-alternativebrickbrand.jpg";
 import echotripImage from "@/assets/project-echotrip.jpg";
+import echoglazeImage from "@/assets/project-echoglaze.jpg";
 import vesperaImage from "@/assets/project-vespera.jpg";
 
 export interface Project {
@@ -81,46 +82,61 @@ export const projects: Project[] = [
       skills: "Systematic Design, Data Modeling, Cultural UX, DX Optimization"
     }
   },
-  {
-    id: "echotrip",
-    title: "Echotrip: Work-Abroad Planner",
-    shortDescription: "Curated tool that organizes remote work travel chaos into clear Destination Finder, dynamic Cost Calculator, Visa Clarifier, and Nomad Workspace guides.",
-    fullDescription: "Echotrip cuts through work-abroad planning overwhelm with curated tools: vibe+budget matching, real-time COL estimates, visa demystification, workspace resources, and flight sweet-spot analysis. Built from personal nomad research needs using 'Less is more' + easy navigation UX principles.",
-    image: echotripImage, // Add this asset first
-    technologies: ["SvelteKit", "Tailwind", "TypeScript"],
-    liveUrl: "https://echotrip.netlify.app",
-    githubUrl: "https://github.com/wgrea/Travel-Planner",
-    category: "travel",
-    featured: true,
-    type: "startup",
-    status: "beta",
-    statusNote: "Alpha core live; UX‑first redesign underway",
-    uxProblem: "Scattered advice, vague costs, confusing visas, endless destination lists overwhelm work-abroad planners — especially when timing (months, seasons, cost windows) isn’t clearly connected to decisions.",
-    uxResearch: "Built from personal research pain points + analysis of 5 major travel planning tools. Realized that month‑based filtering helps with intentionality — not to force decisions, but to understand when something is viable or affordable.",
-    uxDecisions: [
-      {
-        challenge: "Information overload across planning stages",
-        solution: "'Less is more' curation + non-linear navigation",
-        rationale: "Reduces cognitive load by 70% through focused tools"
-      },
-      {
-        challenge: "Uncertain cost estimates across currencies",
-        solution: "Dynamic real-time COL calculator",
-        rationale: "Eliminates 'surprise expense' anxiety"
-      },
-      {
-  challenge: "Hard to connect timing with actual decisions",
-  solution: "Month-based filters for flights, events, and costs",
-  rationale: "Supports intentional planning by showing when something is viable or affordable — even if the choice is to skip it."
-}
-
-    ],
-    uxOutcome: "Transforms planning chaos into structured, intentional decision flows.",
-    journey: {
-      initialBuild: "Solo-built from personal work-abroad research needs during active nomad planning.",
-      skills: "Problem-first UX, curation over abundance, non-linear navigation, real-time data UX"
+{
+  id: "echoglaze",
+  title: "EchoGlaze: Work‑Abroad Planner",
+  shortDescription:
+    "A redesigned, DX‑first evolution of my work‑abroad planner — now faster to build, easier to extend, and focused on the essentials that actually matter when choosing where to work abroad.",
+  fullDescription:
+    "EchoGlaze is a ground‑up redesign of my original nomad planning tool. Instead of overwhelming users with data, it focuses on the three signals that truly shape work‑abroad decisions: seasonal viability, visa clarity, and transportation reality. I rebuilt the architecture for speed, clarity, and future scalability — combining pages, removing noise, and keeping only data that meaningfully affects decisions. The result is a calmer, more intentional UX that lets the mind focus on the *subject* (the destination), not the app.",
+  image: echoglazeImage, // add asset
+  technologies: ["SvelteKit", "Tailwind", "TypeScript"],
+  liveUrl: "https://echoglaze.netlify.app",
+  githubUrl: "https://github.com/wgrea/EchoGlaze",
+  category: "travel",
+  featured: true,
+  type: "startup",
+  status: "beta",
+  statusNote: "Core pages live; expanding country and city coverage",
+  uxProblem:
+    "Nomad planning tools overwhelm with noise — too many costs, too many pages, too many decisions. EchoGlaze solves this by showing only what’s actionable: seasonal viability, visa rules, transportation options, and budget‑friendly accommodations.",
+  uxResearch:
+    "Built from personal nomad research and lessons learned from EchoTrip. I analyzed what information I actually used while planning and removed everything that didn’t meaningfully affect decisions. The result is a leaner, more intentional UX.",
+  uxDecisions: [
+    {
+      challenge: "EchoTrip had too many pages and duplicated information",
+      solution: "Combined Digital Nomad + Living Costs into one page",
+      rationale:
+        "Workability and cost are inseparable — merging them reduces friction and makes the decision flow clearer."
+    },
+    {
+      challenge: "Visa and flight pages were too large and unfocused",
+      solution: "Merged into a single Seasonal + Visa page",
+      rationale:
+        "Seasonality is the most important flight signal; visa rules are the most important entry signal. Combining them keeps the user in one mental model."
+    },
+    {
+      challenge: "Too much data that didn’t matter (2/5 workability, irrelevant costs)",
+      solution: "Only include high‑quality, budget‑friendly, viable options",
+      rationale:
+        "Good UX means removing everything that doesn’t help the user make a decision."
+    },
+    {
+      challenge: "Hard to extend and maintain the old architecture",
+      solution: "Rebuilt backend structure for DX-first editing",
+      rationale:
+        "Now I can add countries and cities quickly, using EchoTrip as a blueprint but without its complexity."
     }
-  },
+  ],
+  uxOutcome:
+    "A calmer, more intentional work‑abroad planner that’s easier to use, easier to maintain, and easier to grow.",
+  journey: {
+    initialBuild:
+      "Developed rapidly thanks to prototyping skills gained from Vespera. I only needed FigJam once — most decisions came from editing what mattered most.",
+    skills:
+      "DX-first architecture, UX simplification, schema refactoring, decision‑focused design"
+  }
+},
   {
     id: "minglemap",
     title: "MingleMap: Designing Social Discovery",
