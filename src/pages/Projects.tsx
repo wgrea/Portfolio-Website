@@ -133,10 +133,10 @@ const Projects = () => {
           <div className="text-center mb-8">
             <h3 className="text-xl font-semibold mb-2 flex items-center justify-center gap-2">
               <XCircle className="w-5 h-5 text-orange-500" />
-              Cancelled Project
+              Post-Mortem & Pivot
             </h3>
             <p className="text-muted-foreground text-sm">
-              Why I shut down an AI‑generated MVP — and what it taught me about UX clarity
+              Why I sunsetted an AI‑generated MVP — and how rapid validation saved engineering time
             </p>
           </div>
           
@@ -151,9 +151,9 @@ const Projects = () => {
               <h4 className="font-bold text-xl mb-3 bg-gradient-to-r from-orange-600 to-red-500 bg-clip-text text-transparent">
                 SkillsHub
               </h4>
-              <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                Bolt.new MVP → Static model. When speed exposed the real UX problem.
-              </p>
+                <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
+                  Bolt.new MVP → Strategic Sunset. When engineering speed exposed the real UX problem.
+                </p>
               <div className="flex items-center justify-center text-sm text-orange-600 font-semibold gap-1">
                 <span>Read case study</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
