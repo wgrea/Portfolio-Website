@@ -1,4 +1,4 @@
-// src/components/Projects.tsx
+// src/pages/Projects.tsx
 import { getProjectById, projects } from "@/data/projectsData";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { Link } from "react-router-dom";
