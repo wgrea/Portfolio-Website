@@ -13,6 +13,13 @@ import vesperaImage from "@/assets/project-vespera.jpg";
 export interface Project {
   id: string;
   title: string;
+  fiveW?: {
+    who: string;
+    what: string;
+    when: string;
+    where: string;
+    why: string;
+  };
   shortDescription: string;
   fullDescription: string;
   image: string;
@@ -52,6 +59,13 @@ export const projects: Project[] = [
     id: "vespera",
     title: "Vespera: Global Drinks & Social Explorer",
     shortDescription: "A UX-first, culturally aware database exploring global drinking norms, safety expectations, and social environments.",
+    fiveW: {
+      who: "Travelers navigating unfamiliar social environments who need culturally grounded safety cues and etiquette guidance.",
+      what: "A principle‑driven interaction system that translates real‑world retail safety patterns into progressive‑disclosure flows for cultural risk communication.",
+      when: "Built in early 2025 as a UX‑first prototype focused on meaning, emotional readability, and decision clarity.",
+      where: "Designed remotely using React, TypeScript, Tailwind, and a hand‑crafted UX folder architecture.",
+      why: "Social discovery tools often lack nuance and safety context; Vespera provides culturally aware guidance that reduces risk and improves user confidence."
+    },
     fullDescription: "Vespera bridges cultural research with intentional design. It moves beyond a simple database to provide safety context and social norms for global travelers. Built with a 'UX-first' workflow, the project prioritizes emotional readability and hand-crafted decision logic over over-engineered code.",
     image: vesperaImage, // Import this in your assets
     technologies: ["SvelteKit", "TypeScript", "Tailwind CSS", "Lucide"],
@@ -87,6 +101,13 @@ export const projects: Project[] = [
   title: "EchoGlaze: Work‑Abroad Planner",
   shortDescription:
     "A redesigned, DX‑first evolution of my work‑abroad planner — now faster to build, easier to extend, and focused on the essentials that actually matter when choosing where to work abroad.",
+  fiveW: {
+    who: "Digital nomads, remote workers, and early‑stage work‑abroad planners who struggle with noisy, fragmented planning tools.",
+    what: "A ground‑up redesign of my original nomad planner (EchoTrip) into a modular, decision‑focused UX system centered on seasonality, visa feasibility, and transportation reality.",
+    when: "Built in mid‑2025 as part of my freelance UX/IA consulting work.",
+    where: "Designed and developed remotely using SvelteKit, Tailwind, and TypeScript.",
+    why: "Existing nomad tools overwhelm users with irrelevant data; EchoGlaze reduces cognitive load by focusing only on signals that meaningfully shape work‑abroad decisions."
+  },
   fullDescription:
     "EchoGlaze is a ground‑up redesign of my original nomad planning tool. Instead of overwhelming users with data, it focuses on the three signals that truly shape work‑abroad decisions: seasonal viability, visa clarity, and transportation reality. I rebuilt the architecture for speed, clarity, and future scalability — combining pages, removing noise, and keeping only data that meaningfully affects decisions. The result is a calmer, more intentional UX that lets the mind focus on the *subject* (the destination), not the app.",
   image: echoglazeImage, // add asset

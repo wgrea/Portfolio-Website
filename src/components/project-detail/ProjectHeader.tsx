@@ -42,6 +42,19 @@ const ProjectHeader = ({ project, getStatusColor, getStatusIcon }: ProjectHeader
       <h1 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 to-teal-400 dark:from-blue-400 dark:to-teal-300 bg-clip-text text-transparent">
         {project.title}
       </h1>
+
+      {project.fiveW && (
+        <section className="mb-6 p-4 bg-surface/50 rounded-lg border border-border/50">
+          <h2 className="text-xl font-semibold mb-3">Project Snapshot (5W)</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-muted-foreground">
+            <div><strong>Who:</strong> {project.fiveW.who}</div>
+            <div><strong>What:</strong> {project.fiveW.what}</div>
+            <div><strong>When:</strong> {project.fiveW.when}</div>
+            <div><strong>Where:</strong> {project.fiveW.where}</div>
+            <div className="sm:col-span-2"><strong>Why:</strong> {project.fiveW.why}</div>
+          </div>
+        </section>
+      )}
       
       <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
         {project.fullDescription}
